@@ -19,10 +19,20 @@ window.addEventListener('load', function () {
             activePointers: 3
         }
     });
+    game.scene.add("Boot", Boot);
     game.scene.add("Preload", Preload);
     game.scene.add("Level", Level);
-    game.scene.start("Preload");
+    game.scene.start("Boot");
 });
+class Boot extends Phaser.Scene {
+    constructor() {
+        super("Boot");
+    }
+    preload() {
+        this.load.pack("preload-asset-pack", "assets/preload-asset-pack.json");
+        this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("Preload"));
+    }
+}
 class UserComponent {
     /**
      * @param gameObject The entity.
@@ -205,6 +215,26 @@ class PlayerController extends UserComponent {
             this.player?.pressButton(this.direction);
         }
     }
+}
+/* END OF COMPILED CODE */
+// You can write more code here
+/// <reference path="./UserComponent.ts"/>
+/* START OF COMPILED CODE */
+class PreloadText extends UserComponent {
+    constructor(gameObject) {
+        super(gameObject);
+        this.gameObject = gameObject;
+        gameObject["__PreloadText"] = this;
+        /* START-USER-CTR-CODE */
+        this.scene.load.on(Phaser.Loader.Events.PROGRESS, (p) => {
+            this.gameObject.text = Math.floor(p * 100) + "%";
+        });
+        /* END-USER-CTR-CODE */
+    }
+    static getComponent(gameObject) {
+        return gameObject["__PreloadText"];
+    }
+    gameObject;
 }
 /* END OF COMPILED CODE */
 // You can write more code here
@@ -860,27 +890,25 @@ class Preload extends Phaser.Scene {
         this.load.pack("asset-pack", "assets/asset-pack.json");
     }
     editorCreate() {
-        // loadingText
-        const loadingText = this.add.text(600, 375, "", {});
-        loadingText.setOrigin(0.5, 0.5);
-        loadingText.text = "Loading";
-        loadingText.setStyle({ "fontSize": "48px" });
-        this.loadingText = loadingText;
+        // guapen
+        const guapen = this.add.image(600, 317, "guapen");
+        guapen.scaleX = 0.5915891440784282;
+        guapen.scaleY = 0.5915891440784282;
+        // progress
+        const progress = this.add.text(600, 447, "", {});
+        progress.setOrigin(0.5, 0.5);
+        progress.text = "0%";
+        progress.setStyle({ "fontSize": "30px" });
+        // progress (components)
+        new PreloadText(progress);
         this.events.emit("scene-awake");
     }
-    loadingText;
     /* START-USER-CODE */
+    // Write your code here
     preload() {
         this.editorCreate();
         this.editorPreload();
-        this.load.on(Phaser.Loader.Events.PROGRESS, (p) => {
-            if (this.loadingText) {
-                this.loadingText.text = "Loading " + Math.floor(p * 100) + "%";
-            }
-        });
-        this.load.on(Phaser.Loader.Events.COMPLETE, () => {
-            this.scene.start("Level");
-        });
+        this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("Level"));
     }
 }
 /* END OF COMPILED CODE */

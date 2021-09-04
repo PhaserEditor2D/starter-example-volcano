@@ -1,10 +1,10 @@
 {
-    "id": "c44173cc-f52f-4ce5-9cbe-def0bbc2452b",
+    "id": "04331fb6-ed91-4d74-b6e9-4bfe0fcfb457",
     "sceneType": "SCENE",
     "settings": {
         "preloadMethodName": "editorPreload",
         "preloadPackFiles": [
-            "Volcano/assets/asset-pack.json"
+            "starter-example-volcano/assets/asset-pack.json"
         ],
         "createMethodName": "editorCreate",
         "sceneKey": "Preload",
@@ -14,15 +14,29 @@
     },
     "displayList": [
         {
-            "type": "Text",
-            "id": "d0e68a62-86aa-47ea-bfce-b3cb13fd4521",
-            "label": "loadingText",
-            "scope": "CLASS",
+            "type": "Image",
+            "id": "e413cbbf-ce25-4dad-a117-b7cf0791f655",
+            "label": "guapen",
             "components": [],
+            "texture": {
+                "key": "guapen"
+            },
             "x": 600,
-            "y": 375,
-            "text": "Loading",
-            "fontSize": "48px"
+            "y": 317,
+            "scaleX": 0.5915891440784282,
+            "scaleY": 0.5915891440784282
+        },
+        {
+            "type": "Text",
+            "id": "2ce42443-5227-4c9b-b498-e81f9a21cde3",
+            "label": "progress",
+            "components": [
+                "PreloadText"
+            ],
+            "x": 600,
+            "y": 447,
+            "text": "0%",
+            "fontSize": "30px"
         }
     ],
     "plainObjects": [],

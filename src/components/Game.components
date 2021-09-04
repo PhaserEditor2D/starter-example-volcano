@@ -131,6 +131,12 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "PreloadText",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Text",
+            "properties": []
         }
     ],
     "meta": {

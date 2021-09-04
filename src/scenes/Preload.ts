@@ -20,20 +20,26 @@ class Preload extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// loadingText
-		const loadingText = this.add.text(600, 375, "", {});
-		loadingText.setOrigin(0.5, 0.5);
-		loadingText.text = "Loading";
-		loadingText.setStyle({ "fontSize": "48px" });
+		// guapen
+		const guapen = this.add.image(600, 317, "guapen");
+		guapen.scaleX = 0.5915891440784282;
+		guapen.scaleY = 0.5915891440784282;
 
-		this.loadingText = loadingText;
+		// progress
+		const progress = this.add.text(600, 447, "", {});
+		progress.setOrigin(0.5, 0.5);
+		progress.text = "0%";
+		progress.setStyle({ "fontSize": "30px" });
+
+		// progress (components)
+		new PreloadText(progress);
 
 		this.events.emit("scene-awake");
 	}
 
-	private loadingText: Phaser.GameObjects.Text | undefined;
-
 	/* START-USER-CODE */
+
+	// Write your code here
 
 	preload() {
 
@@ -41,19 +47,9 @@ class Preload extends Phaser.Scene {
 
 		this.editorPreload();
 
-		this.load.on(Phaser.Loader.Events.PROGRESS, (p: number) => {
-
-			if (this.loadingText) {
-
-				this.loadingText.text = "Loading " + Math.floor(p * 100) + "%"
-			}
-		});
-
-		this.load.on(Phaser.Loader.Events.COMPLETE, () => {
-
-			this.scene.start("Level");
-		});
+		this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("Level"));
 	}
+
 	/* END-USER-CODE */
 }
 

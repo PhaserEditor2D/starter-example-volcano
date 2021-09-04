@@ -5,7 +5,7 @@ window.addEventListener('load', function () {
 		width: 1200,
 		height: 750,
 		type: Phaser.AUTO,
-        backgroundColor: "#242424",
+		backgroundColor: "#242424",
 		physics: {
 			default: "arcade",
 			arcade: {
@@ -21,7 +21,22 @@ window.addEventListener('load', function () {
 		}
 	});
 
+	game.scene.add("Boot", Boot);
 	game.scene.add("Preload", Preload);
 	game.scene.add("Level", Level);
-	game.scene.start("Preload")
+	game.scene.start("Boot");
 });
+
+class Boot extends Phaser.Scene {
+
+	constructor() {
+		super("Boot");
+	}
+
+	preload() {
+
+		this.load.pack("preload-asset-pack", "assets/preload-asset-pack.json");
+
+		this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("Preload"));
+	}
+}
