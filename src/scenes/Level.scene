@@ -5,7 +5,7 @@
         "snapWidth": 40,
         "snapHeight": 750,
         "preloadPackFiles": [],
-        "createMethodName": "_create",
+        "createMethodName": "editorCreate",
         "sceneKey": "Level",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 1200,
@@ -22,7 +22,6 @@
                     "type": "Image",
                     "id": "41073760-e113-4d3f-a85d-f52c66a9d40c",
                     "label": "background",
-                    "scope": "CLASS",
                     "components": [
                         "ScrollFactor"
                     ],
@@ -43,7 +42,6 @@
                     "type": "Image",
                     "id": "a8a8913b-69b5-4313-a1cc-755ff6688b9e",
                     "label": "blava2",
-                    "scope": "CLASS",
                     "components": [
                         "ScrollFactor"
                     ],
@@ -60,7 +58,6 @@
                     "type": "Image",
                     "id": "070eb82a-3711-412b-bce3-f32782472054",
                     "label": "blava3",
-                    "scope": "CLASS",
                     "components": [
                         "ScrollFactor"
                     ],
@@ -77,7 +74,6 @@
                     "type": "Image",
                     "id": "f048e2f9-1476-430a-8ec4-147e14d1347c",
                     "label": "blava1",
-                    "scope": "CLASS",
                     "components": [
                         "ScrollFactor"
                     ],
@@ -129,14 +125,14 @@
                         "y"
                     ],
                     "label": "movingPlatform2",
-                    "scope": "CLASS",
                     "components": [],
                     "HorizontalMove.horizVelocity": -50,
                     "HorizontalMove.minX": 540,
                     "HorizontalMove.maxX": 1170,
                     "x": 890,
                     "y": 256,
-                    "nestedPrefabs": []
+                    "nestedPrefabs": [],
+                    "list": []
                 },
                 {
                     "prefabId": "164dfa03-f3fa-4cc3-89ae-164be0665e68",
@@ -148,13 +144,13 @@
                         "y"
                     ],
                     "label": "movingPlatform1",
-                    "scope": "CLASS",
                     "components": [],
                     "HorizontalMove.minX": 310,
                     "HorizontalMove.maxX": 924,
                     "x": 311,
                     "y": 577,
-                    "nestedPrefabs": []
+                    "nestedPrefabs": [],
+                    "list": []
                 },
                 {
                     "type": "Image",
@@ -172,9 +168,7 @@
                     "type": "Image",
                     "id": "53ca02c0-160d-4c94-b9fa-cf50ea2df825",
                     "label": "p3",
-                    "components": [
-                        "PlatformPhysics"
-                    ],
+                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 12.png"
@@ -186,9 +180,7 @@
                     "type": "Image",
                     "id": "ff41a00a-ec3b-4c48-bc1d-23c95798a3ca",
                     "label": "p2",
-                    "components": [
-                        "PlatformPhysics"
-                    ],
+                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 11.png"
@@ -200,14 +192,21 @@
                     "type": "Image",
                     "id": "6e8a0811-1e8f-490d-a79e-6cbab798ec4a",
                     "label": "p1",
-                    "components": [
-                        "PlatformPhysics"
-                    ],
+                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 11.png"
                     },
-                    "y": 640
+                    "y": 640,
+                    "ArcadeComponent.active": true,
+                    "down": false,
+                    "left": false,
+                    "right": false,
+                    "pushable": false,
+                    "immovable": true,
+                    "body.width": 374,
+                    "body.height": 32,
+                    "body.offset.y": 8
                 },
                 {
                     "prefabId": "4067c8d7-b512-4e73-897d-f33aa7713a53",
@@ -220,13 +219,14 @@
                         "y"
                     ],
                     "label": "movingPlatform3",
-                    "scope": "CLASS",
                     "components": [],
                     "HorizontalMove.horizVelocity": -50,
                     "HorizontalMove.minX": 1900,
                     "HorizontalMove.maxX": 2224,
                     "x": 1920,
-                    "nestedPrefabs": []
+                    "y": 0,
+                    "nestedPrefabs": [],
+                    "list": []
                 },
                 {
                     "prefabId": "164dfa03-f3fa-4cc3-89ae-164be0665e68",
@@ -237,13 +237,14 @@
                         "x",
                         "y"
                     ],
-                    "label": "container_2_1",
+                    "label": "movingPlatform4",
                     "components": [],
                     "HorizontalMove.minX": 1720,
                     "HorizontalMove.maxX": 2360,
                     "x": 1882,
                     "y": 590,
-                    "nestedPrefabs": []
+                    "nestedPrefabs": [],
+                    "list": []
                 },
                 {
                     "type": "Image",
@@ -263,23 +264,29 @@
                     "type": "Image",
                     "id": "00980329-aa9a-43d1-9dac-de7b8bb573a9",
                     "label": "p8",
-                    "components": [
-                        "PlatformPhysics"
-                    ],
+                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 10.png"
                     },
                     "x": 2816,
-                    "y": 640
+                    "y": 640,
+                    "ArcadeComponent.active": true,
+                    "down": false,
+                    "left": false,
+                    "right": false,
+                    "pushable": false,
+                    "immovable": true,
+                    "body.width": 541,
+                    "body.height": 27,
+                    "body.offset.x": 10,
+                    "body.offset.y": 8
                 },
                 {
                     "type": "Image",
                     "id": "f8dd3437-118e-4c70-98ee-366f51226378",
                     "label": "p7",
-                    "components": [
-                        "PlatformPhysics"
-                    ],
+                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 11.png"
@@ -291,9 +298,7 @@
                     "type": "Image",
                     "id": "897aaca6-9219-4997-8172-ea876b24ccf5",
                     "label": "p6",
-                    "components": [
-                        "PlatformPhysics"
-                    ],
+                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 11.png"
@@ -305,9 +310,7 @@
                     "type": "Image",
                     "id": "dd4e39a5-4fd4-4c9e-be90-fc5a135edc48",
                     "label": "p5",
-                    "components": [
-                        "PlatformPhysics"
-                    ],
+                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 11.png"
@@ -316,51 +319,45 @@
                     "y": 640
                 },
                 {
-                    "type": "Image",
+                    "prefabId": "8f45727a-d419-4d94-8405-95063eb19bdf",
                     "id": "c019d9a2-4f9e-450f-8d6b-0e3d7ef6a002",
-                    "label": "p12",
-                    "components": [
-                        "PlatformPhysics"
+                    "unlock": [
+                        "x",
+                        "y"
                     ],
-                    "texture": {
-                        "key": "volcano",
-                        "frame": "Volcano Level Set_Platformer - Stone.png"
-                    },
+                    "label": "p12",
+                    "components": [],
                     "x": 1536,
                     "y": 384
                 },
                 {
-                    "type": "Image",
+                    "prefabId": "8f45727a-d419-4d94-8405-95063eb19bdf",
                     "id": "624380d8-8bb7-4caf-8ed6-056a0fd6ec87",
-                    "label": "p11",
-                    "components": [
-                        "PlatformPhysics"
+                    "unlock": [
+                        "x",
+                        "y"
                     ],
-                    "texture": {
-                        "key": "volcano",
-                        "frame": "Volcano Level Set_Platformer - Stone.png"
-                    },
+                    "label": "p11",
+                    "components": [],
                     "x": 1536,
                     "y": -256
                 },
                 {
-                    "type": "Image",
+                    "prefabId": "8f45727a-d419-4d94-8405-95063eb19bdf",
                     "id": "9888a1fa-a921-41ae-a372-350e827ba316",
-                    "label": "p10",
-                    "components": [
-                        "PlatformPhysics"
+                    "unlock": [
+                        "x",
+                        "y"
                     ],
-                    "texture": {
-                        "key": "volcano",
-                        "frame": "Volcano Level Set_Platformer - Stone.png"
-                    },
+                    "label": "p10",
+                    "components": [],
                     "x": 1664,
                     "y": -256
                 },
                 {
                     "type": "Image",
                     "id": "cd5d9661-3199-40ba-9eb0-4740bef12f82",
-                    "label": "volcano_Level_Set_Environment___Crack_07_png",
+                    "label": "crack4",
                     "components": [],
                     "texture": {
                         "key": "volcano",
@@ -372,7 +369,7 @@
                 {
                     "type": "Image",
                     "id": "8f71921e-ed01-47c8-99e0-0bf0b6cc3340",
-                    "label": "volcano_Level_Set_Environment___Crack_06_png",
+                    "label": "crack3",
                     "components": [],
                     "texture": {
                         "key": "volcano",
@@ -384,7 +381,7 @@
                 {
                     "type": "Image",
                     "id": "d0a8940e-af75-423f-ace7-16f72095b8f5",
-                    "label": "volcano_Level_Set_Environment___Crack_06_png_1",
+                    "label": "crack2",
                     "components": [],
                     "texture": {
                         "key": "volcano",
@@ -396,7 +393,7 @@
                 {
                     "type": "Image",
                     "id": "7b00cb2a-7459-4c09-ad01-340e8e9c451d",
-                    "label": "volcano_Level_Set_Environment___Crack_05_png",
+                    "label": "crack1",
                     "components": [],
                     "texture": {
                         "key": "volcano",
@@ -406,16 +403,14 @@
                     "y": 698
                 },
                 {
-                    "type": "Image",
+                    "prefabId": "8f45727a-d419-4d94-8405-95063eb19bdf",
                     "id": "8ea8b5e1-982b-4e8d-8e16-20df0882ee73",
-                    "label": "volcano_Level_Set_Platformer___Brick_02_png_2_1",
-                    "components": [
-                        "PlatformPhysics"
+                    "unlock": [
+                        "x",
+                        "y"
                     ],
-                    "texture": {
-                        "key": "volcano",
-                        "frame": "Volcano Level Set_Platformer - Stone.png"
-                    },
+                    "label": "p13",
+                    "components": [],
                     "x": 1792,
                     "y": -256
                 }
@@ -617,7 +612,6 @@
             "type": "Layer",
             "id": "83cb0edc-5a91-49d5-a5c6-1d30959157b7",
             "label": "playerLayer",
-            "scope": "CLASS",
             "components": [],
             "list": [
                 {
@@ -634,8 +628,8 @@
                     "platforms": "platforms",
                     "foodItems": "foodItems",
                     "components": [],
-                    "x": 94,
-                    "y": 395
+                    "x": 104,
+                    "y": 482
                 }
             ]
         },
@@ -680,38 +674,30 @@
                     "y": 278
                 },
                 {
-                    "prefabId": "ad30b4e1-19b5-4a8c-8b9b-bdecec788df1",
+                    "prefabId": "d014133a-564c-4eb6-8938-64c1aacc60bb",
                     "id": "5f7455e2-d7b3-440b-bb27-a7557a750043",
                     "unlock": [
-                        "texture",
+                        "t",
                         "x",
                         "y"
                     ],
                     "label": "banana",
                     "components": [],
-                    "texture": {
-                        "key": "volcano",
-                        "frame": "Tiny Caveman_Game Object - Banana.png"
-                    },
-                    "x": 480,
-                    "y": 680
+                    "x": 1084,
+                    "y": -261
                 },
                 {
-                    "prefabId": "ad30b4e1-19b5-4a8c-8b9b-bdecec788df1",
+                    "prefabId": "e8a49045-9f87-496b-9105-011f7f51cb6d",
                     "id": "4a8b802c-c831-4d20-b008-026274a48091",
                     "unlock": [
-                        "texture",
-                        "x",
-                        "y"
+                        "t",
+                        "y",
+                        "x"
                     ],
                     "label": "apple",
                     "components": [],
-                    "texture": {
-                        "key": "volcano",
-                        "frame": "Tiny Caveman_Game Object - Apple.png"
-                    },
-                    "x": 600,
-                    "y": 160
+                    "x": 2002,
+                    "y": -488
                 },
                 {
                     "prefabId": "ad30b4e1-19b5-4a8c-8b9b-bdecec788df1",
@@ -731,36 +717,28 @@
                     "y": 680
                 },
                 {
-                    "prefabId": "ad30b4e1-19b5-4a8c-8b9b-bdecec788df1",
+                    "prefabId": "e8a49045-9f87-496b-9105-011f7f51cb6d",
                     "id": "97ef4dd0-3d97-4453-8838-1d606ac2b92b",
                     "unlock": [
-                        "texture",
-                        "x",
-                        "y"
+                        "t",
+                        "y",
+                        "x"
                     ],
                     "label": "apple2",
                     "components": [],
-                    "texture": {
-                        "key": "volcano",
-                        "frame": "Tiny Caveman_Game Object - Apple.png"
-                    },
-                    "x": 2480,
-                    "y": 680
+                    "x": 432,
+                    "y": 239
                 },
                 {
-                    "prefabId": "ad30b4e1-19b5-4a8c-8b9b-bdecec788df1",
+                    "prefabId": "d014133a-564c-4eb6-8938-64c1aacc60bb",
                     "id": "f7847bba-3cf2-413d-8ad9-948ec8ede6dc",
                     "unlock": [
-                        "texture",
-                        "x",
-                        "y"
+                        "t",
+                        "y",
+                        "x"
                     ],
                     "label": "banana1",
                     "components": [],
-                    "texture": {
-                        "key": "volcano",
-                        "frame": "Tiny Caveman_Game Object - Banana.png"
-                    },
                     "x": 1760,
                     "y": 680
                 },
@@ -799,6 +777,7 @@
                     "label": "btn_left",
                     "components": [],
                     "PlayerController.player": "player",
+                    "PlayerController.direction": "left",
                     "texture": {
                         "key": "ui",
                         "frame": "btn-left"
@@ -857,14 +836,11 @@
                     "type": "Text",
                     "id": "a91eccd8-b682-45d0-85ae-1e060a2e4302",
                     "label": "debugText",
-                    "scope": "CLASS",
                     "components": [
                         "ScrollFactor"
                     ],
                     "x": 224,
                     "y": -106,
-                    "originX": 0,
-                    "originY": 0,
                     "text": "Debug text.",
                     "fontSize": "42px"
                 }
@@ -876,7 +852,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 2
+        "version": 3
     },
     "lists": [
         {
@@ -884,28 +860,23 @@
             "label": "platforms",
             "objectIds": [
                 "6e8a0811-1e8f-490d-a79e-6cbab798ec4a",
-                "ff41a00a-ec3b-4c48-bc1d-23c95798a3ca",
                 "4f07f26e-c670-4f6f-8323-5f9bde8b1eb5",
                 "666dc2f5-48fd-4c36-b383-f9a9247f26ca",
                 "2c7395e6-f3d3-4900-bc9a-b45f3d4480b7",
                 "d57bc724-d133-422d-8c9c-48962c36dba1",
                 "00980329-aa9a-43d1-9dac-de7b8bb573a9",
-                "897aaca6-9219-4997-8172-ea876b24ccf5",
-                "dd4e39a5-4fd4-4c9e-be90-fc5a135edc48",
-                "14939281-2102-4773-899d-26550fde5486",
-                "f8dd3437-118e-4c70-98ee-366f51226378",
                 "c019d9a2-4f9e-450f-8d6b-0e3d7ef6a002",
                 "8ea8b5e1-982b-4e8d-8e16-20df0882ee73",
                 "9888a1fa-a921-41ae-a372-350e827ba316",
                 "624380d8-8bb7-4caf-8ed6-056a0fd6ec87",
-                "53ca02c0-160d-4c94-b9fa-cf50ea2df825",
                 "c859170a-885f-4119-a5c5-136307052483",
                 "2cb2078f-7728-437e-b324-b9de0f16bd3e",
                 "fb235205-50ac-468f-ade5-539cb5edba8c",
                 "eb135191-9d47-4d9f-8096-be3e377ec373",
                 "42bdc130-272a-45b3-9c7a-a052443621ab",
                 "be5f3ec0-e24e-427c-81af-6aa1ae3c518c"
-            ]
+            ],
+            "scope": "METHOD"
         },
         {
             "id": "76cb5068-6ea9-4ba7-a8e3-e330580a16de",
@@ -919,7 +890,8 @@
                 "28638276-4a66-4285-8b1f-668693e9e0cd",
                 "0e384eb5-66c1-4b78-9f82-8dabcc1b2a6e",
                 "4a8b802c-c831-4d20-b008-026274a48091"
-            ]
+            ],
+            "scope": "METHOD"
         }
     ]
 }

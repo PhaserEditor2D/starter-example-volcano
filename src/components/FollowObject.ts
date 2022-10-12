@@ -2,6 +2,9 @@
 
 /* START OF COMPILED CODE */
 
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
 class FollowObject extends UserComponent {
 
 	constructor(gameObject: Phaser.GameObjects.Image) {
@@ -19,7 +22,7 @@ class FollowObject extends UserComponent {
 	}
 
 	private gameObject: Phaser.GameObjects.Image;
-	public target: Phaser.GameObjects.Container|Phaser.GameObjects.Image|undefined;
+	public target!: Phaser.GameObjects.Container|Phaser.GameObjects.Image|undefined;
 
 	/* START-USER-CODE */
 

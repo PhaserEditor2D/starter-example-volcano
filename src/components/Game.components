@@ -38,23 +38,6 @@
             ]
         },
         {
-            "name": "PlatformPhysics",
-            "baseClass": "UserComponent",
-            "gameObjectType": "Phaser.GameObjects.Image|Phaser.GameObjects.Container",
-            "properties": [
-                {
-                    "name": "bodyY",
-                    "label": "Body Y",
-                    "tooltip": "Body Y",
-                    "defValue": 8,
-                    "customDefinition": false,
-                    "type": {
-                        "id": "number"
-                    }
-                }
-            ]
-        },
-        {
             "name": "FollowObject",
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.GameObjects.Image",
@@ -140,9 +123,9 @@
         }
     ],
     "meta": {
-        "app": "Phaser Editor 2D - Object Script Editor",
+        "app": "Phaser Editor 2D - User Components Editor",
         "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "contentType": "phasereditor2d.core.scene.UserComponents"
     },
     "outputLang": "TYPE_SCRIPT"
 }

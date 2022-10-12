@@ -13,7 +13,7 @@ class Level extends Phaser.Scene {
 		/* END-USER-CTR-CODE */
 	}
 
-	_create(): void {
+	editorCreate(): void {
 
 		// backgroundLayer
 		const backgroundLayer = this.add.layer();
@@ -74,16 +74,24 @@ class Level extends Phaser.Scene {
 		platformsLayer.add(p2);
 
 		// p1
-		const p1 = this.add.image(0, 640, "volcano", "Volcano Level Set_Platformer - Ground 11.png");
+		const p1 = this.add.image(0, 640, "volcano", "Volcano Level Set_Platformer - Ground 11.png") as Phaser.GameObjects.Image & { body: Phaser.Physics.Arcade.Body };
+		this.physics.add.existing(p1, false);
+		p1.body.checkCollision.down = false;
+		p1.body.checkCollision.left = false;
+		p1.body.checkCollision.right = false;
+		p1.body.pushable = false;
+		p1.body.immovable = true;
+		p1.body.setOffset(0, 8);
+		p1.body.setSize(374, 32, false);
 		platformsLayer.add(p1);
 
 		// movingPlatform3
 		const movingPlatform3 = new MovingPlatform1(this, 1920, 0);
 		platformsLayer.add(movingPlatform3);
 
-		// container_2_1
-		const container_2_1 = new MovingPlatform2(this, 1882, 590);
-		platformsLayer.add(container_2_1);
+		// movingPlatform4
+		const movingPlatform4 = new MovingPlatform2(this, 1882, 590);
+		platformsLayer.add(movingPlatform4);
 
 		// p9
 		const p9 = this.add.image(2880, 640, "volcano", "Volcano Level Set_Platformer - Ground Additional 02.png");
@@ -91,7 +99,15 @@ class Level extends Phaser.Scene {
 		platformsLayer.add(p9);
 
 		// p8
-		const p8 = this.add.image(2816, 640, "volcano", "Volcano Level Set_Platformer - Ground 10.png");
+		const p8 = this.add.image(2816, 640, "volcano", "Volcano Level Set_Platformer - Ground 10.png") as Phaser.GameObjects.Image & { body: Phaser.Physics.Arcade.Body };
+		this.physics.add.existing(p8, false);
+		p8.body.checkCollision.down = false;
+		p8.body.checkCollision.left = false;
+		p8.body.checkCollision.right = false;
+		p8.body.pushable = false;
+		p8.body.immovable = true;
+		p8.body.setOffset(10, 8);
+		p8.body.setSize(541, 27, false);
 		platformsLayer.add(p8);
 
 		// p7
@@ -107,36 +123,36 @@ class Level extends Phaser.Scene {
 		platformsLayer.add(p5);
 
 		// p12
-		const p12 = this.add.image(1536, 384, "volcano", "Volcano Level Set_Platformer - Stone.png");
+		const p12 = new Stone(this, 1536, 384);
 		platformsLayer.add(p12);
 
 		// p11
-		const p11 = this.add.image(1536, -256, "volcano", "Volcano Level Set_Platformer - Stone.png");
+		const p11 = new Stone(this, 1536, -256);
 		platformsLayer.add(p11);
 
 		// p10
-		const p10 = this.add.image(1664, -256, "volcano", "Volcano Level Set_Platformer - Stone.png");
+		const p10 = new Stone(this, 1664, -256);
 		platformsLayer.add(p10);
 
-		// volcano_Level_Set_Environment___Crack_07_png
-		const volcano_Level_Set_Environment___Crack_07_png = this.add.image(117, 866, "volcano", "Volcano Level Set_Environment - Crack 07.png");
-		platformsLayer.add(volcano_Level_Set_Environment___Crack_07_png);
+		// crack4
+		const crack4 = this.add.image(117, 866, "volcano", "Volcano Level Set_Environment - Crack 07.png");
+		platformsLayer.add(crack4);
 
-		// volcano_Level_Set_Environment___Crack_06_png
-		const volcano_Level_Set_Environment___Crack_06_png = this.add.image(212, 664, "volcano", "Volcano Level Set_Environment - Crack 06.png");
-		platformsLayer.add(volcano_Level_Set_Environment___Crack_06_png);
+		// crack3
+		const crack3 = this.add.image(212, 664, "volcano", "Volcano Level Set_Environment - Crack 06.png");
+		platformsLayer.add(crack3);
 
-		// volcano_Level_Set_Environment___Crack_06_png_1
-		const volcano_Level_Set_Environment___Crack_06_png_1 = this.add.image(3098, 903, "volcano", "Volcano Level Set_Environment - Crack 06.png");
-		platformsLayer.add(volcano_Level_Set_Environment___Crack_06_png_1);
+		// crack2
+		const crack2 = this.add.image(3098, 903, "volcano", "Volcano Level Set_Environment - Crack 06.png");
+		platformsLayer.add(crack2);
 
-		// volcano_Level_Set_Environment___Crack_05_png
-		const volcano_Level_Set_Environment___Crack_05_png = this.add.image(2999, 698, "volcano", "Volcano Level Set_Environment - Crack 05.png");
-		platformsLayer.add(volcano_Level_Set_Environment___Crack_05_png);
+		// crack1
+		const crack1 = this.add.image(2999, 698, "volcano", "Volcano Level Set_Environment - Crack 05.png");
+		platformsLayer.add(crack1);
 
-		// volcano_Level_Set_Platformer___Brick_02_png_2_1
-		const volcano_Level_Set_Platformer___Brick_02_png_2_1 = this.add.image(1792, -256, "volcano", "Volcano Level Set_Platformer - Stone.png");
-		platformsLayer.add(volcano_Level_Set_Platformer___Brick_02_png_2_1);
+		// p13
+		const p13 = new Stone(this, 1792, -256);
+		platformsLayer.add(p13);
 
 		// platformTopItemsLayer
 		const platformTopItemsLayer = this.add.layer();
@@ -196,7 +212,7 @@ class Level extends Phaser.Scene {
 		const playerLayer = this.add.layer();
 
 		// player
-		const player = new Player(this, 94, 395);
+		const player = new Player(this, 104, 482);
 		playerLayer.add(player);
 
 		// pickItemsLayer
@@ -211,11 +227,11 @@ class Level extends Phaser.Scene {
 		pickItemsLayer.add(meet2);
 
 		// banana
-		const banana = new FoodItem(this, 480, 680, "volcano", "Tiny Caveman_Game Object - Banana.png");
+		const banana = new Banana(this, 1084, -261);
 		pickItemsLayer.add(banana);
 
 		// apple
-		const apple = new FoodItem(this, 600, 160, "volcano", "Tiny Caveman_Game Object - Apple.png");
+		const apple = new Apple(this, 2002, -488);
 		pickItemsLayer.add(apple);
 
 		// cherry
@@ -223,11 +239,11 @@ class Level extends Phaser.Scene {
 		pickItemsLayer.add(cherry);
 
 		// apple2
-		const apple2 = new FoodItem(this, 2480, 680, "volcano", "Tiny Caveman_Game Object - Apple.png");
+		const apple2 = new Apple(this, 432, 239);
 		pickItemsLayer.add(apple2);
 
 		// banana1
-		const banana1 = new FoodItem(this, 1760, 680, "volcano", "Tiny Caveman_Game Object - Banana.png");
+		const banana1 = new Banana(this, 1760, 680);
 		pickItemsLayer.add(banana1);
 
 		// meet1
@@ -259,8 +275,8 @@ class Level extends Phaser.Scene {
 		debugLayer.add(debugText);
 
 		// lists
-		const platforms = [p1, p2, movingPlatform1, movingPlatform2, movingPlatform3, container_2_1, p8, p6, p5, p9, p7, p12, volcano_Level_Set_Platformer___Brick_02_png_2_1, p10, p11, p3, ladder1, ladder2, ladder3, ladder5, ladder4, ladder6]
-		const foodItems = [meet1, banana1, apple2, cherry, banana, meet3, meet2, apple]
+		const platforms = [p1, movingPlatform1, movingPlatform2, movingPlatform3, movingPlatform4, p8, p12, p13, p10, p11, ladder1, ladder2, ladder3, ladder5, ladder4, ladder6];
+		const foodItems = [meet1, banana1, apple2, cherry, banana, meet3, meet2, apple];
 
 		// background (components)
 		const backgroundScrollFactor = new ScrollFactor(background);
@@ -292,49 +308,16 @@ class Level extends Phaser.Scene {
 		movingPlatform1HorizontalMove.minX = 310;
 		movingPlatform1HorizontalMove.maxX = 924;
 
-		// p3 (components)
-		new PlatformPhysics(p3);
-
-		// p2 (components)
-		new PlatformPhysics(p2);
-
-		// p1 (components)
-		new PlatformPhysics(p1);
-
 		// movingPlatform3 (components)
 		const movingPlatform3HorizontalMove = HorizontalMove.getComponent(movingPlatform3);
 		movingPlatform3HorizontalMove.horizVelocity = -50;
 		movingPlatform3HorizontalMove.minX = 1900;
 		movingPlatform3HorizontalMove.maxX = 2224;
 
-		// container_2_1 (components)
-		const container_2_1HorizontalMove = HorizontalMove.getComponent(container_2_1);
-		container_2_1HorizontalMove.minX = 1720;
-		container_2_1HorizontalMove.maxX = 2360;
-
-		// p8 (components)
-		new PlatformPhysics(p8);
-
-		// p7 (components)
-		new PlatformPhysics(p7);
-
-		// p6 (components)
-		new PlatformPhysics(p6);
-
-		// p5 (components)
-		new PlatformPhysics(p5);
-
-		// p12 (components)
-		new PlatformPhysics(p12);
-
-		// p11 (components)
-		new PlatformPhysics(p11);
-
-		// p10 (components)
-		new PlatformPhysics(p10);
-
-		// volcano_Level_Set_Platformer___Brick_02_png_2_1 (components)
-		new PlatformPhysics(volcano_Level_Set_Platformer___Brick_02_png_2_1);
+		// movingPlatform4 (components)
+		const movingPlatform4HorizontalMove = HorizontalMove.getComponent(movingPlatform4);
+		movingPlatform4HorizontalMove.minX = 1720;
+		movingPlatform4HorizontalMove.maxX = 2360;
 
 		// skull1 (components)
 		const skull1FollowObject = new FollowObject(skull1);
@@ -359,6 +342,7 @@ class Level extends Phaser.Scene {
 		// btn_left (components)
 		const btn_leftPlayerController = PlayerController.getComponent(btn_left);
 		btn_leftPlayerController.player = player;
+		btn_leftPlayerController.direction = "left";
 
 		// btn_right (components)
 		const btn_rightPlayerController = PlayerController.getComponent(btn_right);
@@ -373,46 +357,21 @@ class Level extends Phaser.Scene {
 		// debugText (components)
 		new ScrollFactor(debugText);
 
-		this.background = background;
-		this.blava2 = blava2;
-		this.blava3 = blava3;
-		this.blava1 = blava1;
-		this.movingPlatform2 = movingPlatform2;
-		this.movingPlatform1 = movingPlatform1;
-		this.movingPlatform3 = movingPlatform3;
-		this.playerLayer = playerLayer;
 		this.player = player;
-		this.debugText = debugText;
-		this.platforms = platforms;
-		this.foodItems = foodItems;
 
 		this.events.emit("scene-awake");
 	}
 
-	private background: Phaser.GameObjects.Image | undefined;
-	private blava2: Phaser.GameObjects.Image | undefined;
-	private blava3: Phaser.GameObjects.Image | undefined;
-	private blava1: Phaser.GameObjects.Image | undefined;
-	private movingPlatform2: MovingPlatform1 | undefined;
-	private movingPlatform1: MovingPlatform2 | undefined;
-	private movingPlatform3: MovingPlatform1 | undefined;
-	private playerLayer: Phaser.GameObjects.Layer | undefined;
-	private player: Player | undefined;
-	private debugText: Phaser.GameObjects.Text | undefined;
-	private platforms: Array<Phaser.GameObjects.Image | MovingPlatform2 | MovingPlatform1 | Ladder> | undefined;
-	private foodItems: FoodItem[] | undefined;
+	private player!: Player;
 
 	/* START-USER-CODE */
 
 	create() {
 
-		this._create();
+		this.editorCreate();
 
-		if (this.player) {
-
-			this.cameras.main.setBounds(0, -800, 3000, 750 + 800);
-			this.cameras.main.startFollow(this.player);
-		}
+		this.cameras.main.setBounds(0, -800, 3000, 750 + 800);
+		this.cameras.main.startFollow(this.player);
 	}
 
 	/* END-USER-CODE */

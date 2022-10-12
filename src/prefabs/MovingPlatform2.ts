@@ -3,10 +3,24 @@
 
 /* START OF COMPILED CODE */
 
+interface MovingPlatform2 {
+
+	 body: Phaser.Physics.Arcade.Body;
+}
+
 class MovingPlatform2 extends Phaser.GameObjects.Container {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
+
+		scene.physics.add.existing(this, false);
+		this.body.checkCollision.down = false;
+		this.body.checkCollision.left = false;
+		this.body.checkCollision.right = false;
+		this.body.pushable = false;
+		this.body.immovable = true;
+		this.body.setOffset(7, 8);
+		this.body.setSize(368, 17, false);
 
 		// p3
 		const p3 = scene.add.image(0, 0, "volcano", "Volcano Level Set_Platformer - Wooden Bridge.png");
@@ -24,7 +38,6 @@ class MovingPlatform2 extends Phaser.GameObjects.Container {
 		this.add(p1);
 
 		// this (components)
-		new PlatformPhysics(this);
 		const thisHorizontalMove = new HorizontalMove(this);
 		thisHorizontalMove.horizVelocity = 100;
 

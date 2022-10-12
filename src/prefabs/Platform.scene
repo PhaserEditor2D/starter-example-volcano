@@ -1,5 +1,5 @@
 {
-    "id": "ad30b4e1-19b5-4a8c-8b9b-bdecec788df1",
+    "id": "9cd01380-cd4d-4b82-aeab-d2af9c7f111a",
     "sceneType": "PREFAB",
     "settings": {
         "preloadMethodName": "",
@@ -10,16 +10,21 @@
     "displayList": [
         {
             "type": "Image",
-            "id": "24f38418-ec72-447a-9019-ef0caf3bb994",
-            "label": "meet1",
+            "id": "a2f8fd8a-9c7d-4d22-9fcd-7c235d6dac7b",
+            "label": "volcano_Level_Set_Platformer___Stone_png",
             "components": [],
             "texture": {
                 "key": "volcano",
-                "frame": "Volcano Level Set_Collectable Object - Meat.png"
+                "frame": "Volcano Level Set_Platformer - Stone.png"
             },
-            "x": 72,
-            "y": 70,
+            "x": 399,
+            "y": 147,
             "ArcadeComponent.active": true,
+            "down": false,
+            "left": false,
+            "right": false,
+            "pushable": false,
+            "immovable": true,
             "body.width": 128,
             "body.height": 128
         }

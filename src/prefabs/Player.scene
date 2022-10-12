@@ -17,18 +17,45 @@
                 "key": "player",
                 "frame": "Idle_001"
             },
-            "x": 136,
-            "y": 177,
+            "x": 311,
+            "y": 204,
             "originX": 0.5045282703122486,
-            "originY": 0.8054902070420497
+            "originY": 0.8054902070420497,
+            "ArcadeComponent.active": true,
+            "body.gravity.y": 600,
+            "body.drag.x": 1,
+            "body.bounce.x": 0.2,
+            "body.bounce.y": 0.2,
+            "body.width": 67,
+            "body.height": 145,
+            "body.offset.x": 102,
+            "body.offset.y": 37.5
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "8bea7bb1-35ad-492c-b4a3-b72c0709b9a4",
+            "type": "Collider",
+            "label": "platformsCollider",
+            "object1": "this",
+            "object2": "[]"
+        },
+        {
+            "id": "7a5fd533-39dd-4fb9-81b2-1679238f3bc1",
+            "type": "Collider",
+            "label": "foodsCollider",
+            "object1": "this",
+            "object2": "[]",
+            "overlapOnly": true,
+            "collideCallback": "this.playerVsFood",
+            "callbackContext": "this"
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 2
+        "version": 3
     },
     "prefabProperties": [
         {

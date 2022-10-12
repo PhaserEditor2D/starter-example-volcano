@@ -1,15 +1,15 @@
-/// <reference path="./Platform.ts"/>
+
+// You can write more code here
 
 /* START OF COMPILED CODE */
 
-class Ladder extends Platform {
+class Banana extends FoodItem {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 251, y ?? 128, texture || "volcano", frame ?? "Volcano Level Set_Platformer - Ladder.png");
+		super(scene, x ?? 441, y ?? 147, texture || "volcano", frame ?? "Tiny Caveman_Game Object - Banana.png");
 
-		this.setOrigin(0, 0);
-		this.body.setOffset(0, 80);
-		this.body.setSize(128, 48, false);
+		this.body.setOffset(4, 8);
+		this.body.setSize(73, 68, false);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
