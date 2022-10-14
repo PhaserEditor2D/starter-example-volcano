@@ -2,6 +2,9 @@
 
 /* START OF COMPILED CODE */
 
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
 class PreloadText extends UserComponent {
 
 	constructor(gameObject: Phaser.GameObjects.Text) {

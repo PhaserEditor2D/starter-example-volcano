@@ -3,12 +3,33 @@
 
 /* START OF COMPILED CODE */
 
+interface Player {
+
+	 body: Phaser.Physics.Arcade.Body;
+}
+
 class Player extends Phaser.GameObjects.Sprite {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 136, y ?? 177, texture || "player", frame ?? "Idle_001");
+		super(scene, x ?? 311, y ?? 204, texture || "player", frame ?? "Idle_001");
 
 		this.setOrigin(0.5045282703122486, 0.8054902070420497);
+		scene.physics.add.existing(this, false);
+		this.body.gravity.y = 600;
+		this.body.drag.x = 1;
+		this.body.bounce.x = 0.2;
+		this.body.bounce.y = 0.2;
+		this.body.setOffset(102, 37.5);
+		this.body.setSize(67, 145, false);
+
+		// platformsCollider
+		const platformsCollider = scene.physics.add.collider(this, []);
+
+		// foodsCollider
+		const foodsCollider = scene.physics.add.overlap(this, [], this.playerVsFood, undefined, this);
+
+		this.platformsCollider = platformsCollider;
+		this.foodsCollider = foodsCollider;
 
 		/* START-USER-CTR-CODE */
 
@@ -18,6 +39,8 @@ class Player extends Phaser.GameObjects.Sprite {
 		/* END-USER-CTR-CODE */
 	}
 
+	private platformsCollider: Phaser.Physics.Arcade.Collider;
+	private foodsCollider: Phaser.Physics.Arcade.Collider;
 	public platforms: Phaser.GameObjects.GameObject[] = [];
 	public foodItems: FoodItem[] = [];
 
@@ -44,19 +67,8 @@ class Player extends Phaser.GameObjects.Sprite {
 
 		// physics
 
-		const arcade = this.scene.physics as Phaser.Physics.Arcade.ArcadePhysics;
-
-		arcade.add.existing(this);
-
-		const body = this.body as Phaser.Physics.Arcade.Body;
-
-		body.setSize(80, 145);
-		body.setDrag(1, 0);
-		body.gravity.set(0, 600);
-		body.setBounce(0.2, 0.2);
-
-		arcade.add.collider(this, this.platforms);
-		arcade.add.overlap(this, this.foodItems, this.playerVsFood, undefined, this);
+		this.platformsCollider.object2 = this.platforms;
+		this.foodsCollider.object2 = this.foodItems;
 
 		// animation
 
@@ -108,7 +120,7 @@ class Player extends Phaser.GameObjects.Sprite {
 		this.rightDown = this.rightDown || this.isKeyDown(this.rightKey);
 		this.upDown = this.upDown || this.isKeyDown(this.upKey) || this.isKeyDown(this.spaceKey);
 
-		const body = this.body as Phaser.Physics.Arcade.Body;
+		const body = this.body;
 
 		const xVelocity = 200;
 

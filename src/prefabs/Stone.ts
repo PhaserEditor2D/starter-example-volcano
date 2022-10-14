@@ -1,15 +1,15 @@
-/// <reference path="./Platform.ts"/>
+
+// You can write more code here
 
 /* START OF COMPILED CODE */
 
-class Ladder extends Platform {
+class Stone extends Platform {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 251, y ?? 128, texture || "volcano", frame ?? "Volcano Level Set_Platformer - Ladder.png");
+		super(scene, x ?? 393, y ?? 213, texture || "volcano", frame ?? "Volcano Level Set_Platformer - Stone.png");
 
-		this.setOrigin(0, 0);
-		this.body.setOffset(0, 80);
-		this.body.setSize(128, 48, false);
+		this.body.setOffset(0, 8);
+		this.body.setSize(128, 120, false);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

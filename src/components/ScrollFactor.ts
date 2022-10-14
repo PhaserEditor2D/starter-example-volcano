@@ -3,6 +3,9 @@
 
 /* START OF COMPILED CODE */
 
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
 class ScrollFactor extends UserComponent {
 
 	constructor(gameObject: Phaser.GameObjects.Image|Phaser.GameObjects.Text) {

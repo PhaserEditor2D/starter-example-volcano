@@ -1,41 +1,39 @@
 {
-    "id": "37217272-2539-426e-97ba-49812099c17b",
+    "id": "e8a49045-9f87-496b-9105-011f7f51cb6d",
     "sceneType": "PREFAB",
     "settings": {
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT"
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1200,
+        "borderHeight": 750
     },
     "displayList": [
         {
-            "prefabId": "9cd01380-cd4d-4b82-aeab-d2af9c7f111a",
-            "id": "c2321382-e9f1-48a2-800e-feccdc697613",
+            "prefabId": "ad30b4e1-19b5-4a8c-8b9b-bdecec788df1",
+            "id": "1518e1bc-d699-418f-b018-f4bed0beef91",
             "unlock": [
                 "x",
                 "y",
+                "texture",
                 "body.offset.x",
                 "body.offset.y",
                 "body.width",
-                "body.height",
-                "texture",
-                "originX",
-                "originY"
+                "body.height"
             ],
-            "label": "ladder1",
+            "label": "foodItem",
             "components": [],
             "texture": {
                 "key": "volcano",
-                "frame": "Volcano Level Set_Platformer - Ladder.png"
+                "frame": "Tiny Caveman_Game Object - Apple.png"
             },
-            "x": 251,
-            "y": 128,
-            "originX": 0,
-            "originY": 0,
-            "body.width": 128,
-            "body.height": 48,
-            "body.offset.x": 0,
-            "body.offset.y": 80
+            "x": 359,
+            "y": 153,
+            "body.width": 67,
+            "body.height": 62,
+            "body.offset.x": 7,
+            "body.offset.y": 15
         }
     ],
     "plainObjects": [],

@@ -3,14 +3,20 @@
 
 /* START OF COMPILED CODE */
 
+interface FoodItem {
+
+	 body: Phaser.Physics.Arcade.Body;
+}
+
 class FoodItem extends Phaser.GameObjects.Image {
-	
+
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 72, y ?? 70, texture || "volcano", frame ?? "Volcano Level Set_Collectable Object - Meat.png");
 
-		/* START-USER-CTR-CODE */
+		scene.physics.add.existing(this, false);
+		this.body.setSize(128, 128, false);
 
-		this.scene.physics.add.existing(this);
+		/* START-USER-CTR-CODE */
 
 		this.idleTween = this.scene.tweens.add({
 			targets: this,
@@ -29,14 +35,9 @@ class FoodItem extends Phaser.GameObjects.Image {
 
 	private idleTween: Phaser.Tweens.Tween;
 
-	getBody() {
-
-		return this.body as Phaser.Physics.Arcade.Body;
-	}
-
 	taken() {
 
-		this.getBody().setEnable(false);
+		this.body.setEnable(false);
 
 		this.idleTween.remove();
 

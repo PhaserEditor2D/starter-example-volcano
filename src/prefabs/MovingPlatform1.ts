@@ -3,10 +3,24 @@
 
 /* START OF COMPILED CODE */
 
+interface MovingPlatform1 {
+
+	 body: Phaser.Physics.Arcade.Body;
+}
+
 class MovingPlatform1 extends Phaser.GameObjects.Container {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
+
+		scene.physics.add.existing(this, false);
+		this.body.checkCollision.down = false;
+		this.body.checkCollision.left = false;
+		this.body.checkCollision.right = false;
+		this.body.pushable = false;
+		this.body.immovable = true;
+		this.body.setOffset(14, 8);
+		this.body.setSize(227, 112, false);
 
 		// p2
 		const p2 = scene.add.image(0, 0, "volcano", "Volcano Level Set_Platformer - Ground 10.png");
@@ -19,7 +33,6 @@ class MovingPlatform1 extends Phaser.GameObjects.Container {
 		this.add(p1);
 
 		// this (components)
-		new PlatformPhysics(this);
 		const thisHorizontalMove = new HorizontalMove(this);
 		thisHorizontalMove.horizVelocity = 50;
 

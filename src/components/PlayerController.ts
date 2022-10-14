@@ -1,6 +1,9 @@
 
 /* START OF COMPILED CODE */
 
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
 class PlayerController extends UserComponent {
 
 	constructor(gameObject: Phaser.GameObjects.Image) {
@@ -21,7 +24,7 @@ class PlayerController extends UserComponent {
 	}
 
 	private gameObject: Phaser.GameObjects.Image;
-	public player: Player|undefined;
+	public player!: Player|undefined;
 	public direction: "left"|"right"|"up" = "left";
 
 	/* START-USER-CODE */

@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
         physics: {
             default: "arcade",
             arcade: {
-                debug: false
+                debug: true
             }
         },
         scale: {
@@ -78,6 +78,8 @@ class UserComponent {
 }
 /// <reference path="./UserComponent.ts" />
 /* START OF COMPILED CODE */
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
 class FollowObject extends UserComponent {
     constructor(gameObject) {
         super(gameObject);
@@ -115,6 +117,8 @@ class FollowObject extends UserComponent {
 // You can write more code here
 // You can write more code here
 /* START OF COMPILED CODE */
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
 class HorizontalMove extends UserComponent {
     constructor(gameObject) {
         super(gameObject);
@@ -147,48 +151,9 @@ class HorizontalMove extends UserComponent {
 }
 /* END OF COMPILED CODE */
 // You can write more code here
-///<reference path="./UserComponent.ts"/>
 /* START OF COMPILED CODE */
-class PlatformPhysics extends UserComponent {
-    constructor(gameObject) {
-        super(gameObject);
-        this.gameObject = gameObject;
-        gameObject["__PlatformPhysics"] = this;
-        /* START-USER-CTR-CODE */
-        this.gameObject.scene.physics.add.existing(this.gameObject);
-        const body = this.gameObject.body;
-        body.velocity.set(0, 0);
-        body.immovable = true;
-        body.checkCollision.up = true;
-        body.checkCollision.down = false;
-        body.checkCollision.left = false;
-        body.checkCollision.right = false;
-        /* END-USER-CTR-CODE */
-    }
-    static getComponent(gameObject) {
-        return gameObject["__PlatformPhysics"];
-    }
-    gameObject;
-    bodyY = 8;
-    /* START-USER-CODE */
-    update() {
-        const body = this.gameObject.body;
-        body.offset.y = this.bodyY;
-        body.offset.set(0, this.bodyY);
-        if (this.gameObject instanceof Phaser.GameObjects.Container) {
-            const list = this.gameObject.list;
-            let width = 0;
-            for (const obj of list) {
-                const sprite = obj;
-                width += sprite.width;
-            }
-            body.setSize(width, 1);
-        }
-    }
-}
-/* END OF COMPILED CODE */
-// You can write more code here
-/* START OF COMPILED CODE */
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
 class PlayerController extends UserComponent {
     constructor(gameObject) {
         super(gameObject);
@@ -220,6 +185,8 @@ class PlayerController extends UserComponent {
 // You can write more code here
 /// <reference path="./UserComponent.ts"/>
 /* START OF COMPILED CODE */
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
 class PreloadText extends UserComponent {
     constructor(gameObject) {
         super(gameObject);
@@ -240,6 +207,8 @@ class PreloadText extends UserComponent {
 // You can write more code here
 // You can write more code here
 /* START OF COMPILED CODE */
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
 class ScrollFactor extends UserComponent {
     constructor(gameObject) {
         super(gameObject);
@@ -262,12 +231,12 @@ class ScrollFactor extends UserComponent {
 /* END OF COMPILED CODE */
 // You can write more code here
 // You can write more code here
-/* START OF COMPILED CODE */
 class FoodItem extends Phaser.GameObjects.Image {
     constructor(scene, x, y, texture, frame) {
         super(scene, x ?? 72, y ?? 70, texture || "volcano", frame ?? "Volcano Level Set_Collectable Object - Meat.png");
+        scene.physics.add.existing(this, false);
+        this.body.setSize(128, 128, false);
         /* START-USER-CTR-CODE */
-        this.scene.physics.add.existing(this);
         this.idleTween = this.scene.tweens.add({
             targets: this,
             scaleX: 0.8,
@@ -281,11 +250,8 @@ class FoodItem extends Phaser.GameObjects.Image {
     }
     /* START-USER-CODE */
     idleTween;
-    getBody() {
-        return this.body;
-    }
     taken() {
-        this.getBody().setEnable(false);
+        this.body.setEnable(false);
         this.idleTween.remove();
         this.scene.add.tween({
             targets: this,
@@ -305,15 +271,13 @@ class FoodItem extends Phaser.GameObjects.Image {
 }
 /* END OF COMPILED CODE */
 // You can write more code here
-// You can write more code here
+/// <reference path="./FoodItem.ts"/>
 /* START OF COMPILED CODE */
-class Ladder extends Phaser.GameObjects.Image {
+class Apple extends FoodItem {
     constructor(scene, x, y, texture, frame) {
-        super(scene, x ?? 0, y ?? 0, texture || "volcano", frame ?? "Volcano Level Set_Platformer - Ladder.png");
-        this.setOrigin(0, 0);
-        // this (components)
-        const thisPlatformPhysics = new PlatformPhysics(this);
-        thisPlatformPhysics.bodyY = 80;
+        super(scene, x ?? 359, y ?? 153, texture || "volcano", frame ?? "Tiny Caveman_Game Object - Apple.png");
+        this.body.setOffset(7, 15);
+        this.body.setSize(67, 62, false);
         /* START-USER-CTR-CODE */
         // Write your code here.
         /* END-USER-CTR-CODE */
@@ -323,9 +287,77 @@ class Ladder extends Phaser.GameObjects.Image {
 // You can write more code here
 // You can write more code here
 /* START OF COMPILED CODE */
+class Banana extends FoodItem {
+    constructor(scene, x, y, texture, frame) {
+        super(scene, x ?? 441, y ?? 147, texture || "volcano", frame ?? "Tiny Caveman_Game Object - Banana.png");
+        this.body.setOffset(4, 8);
+        this.body.setSize(73, 68, false);
+        /* START-USER-CTR-CODE */
+        // Write your code here.
+        /* END-USER-CTR-CODE */
+    }
+}
+/* END OF COMPILED CODE */
+// You can write more code here
+// You can write more code here
+/* START OF COMPILED CODE */
+class Cherry extends FoodItem {
+    constructor(scene, x, y, texture, frame) {
+        super(scene, x ?? 394, y ?? 197, texture || "volcano", frame ?? "Tiny Caveman_Game Object - Cherry.png");
+        this.body.setOffset(7, 3);
+        this.body.setSize(65, 75, false);
+        /* START-USER-CTR-CODE */
+        // Write your code here.
+        /* END-USER-CTR-CODE */
+    }
+}
+/* END OF COMPILED CODE */
+// You can write more code here
+// You can write more code here
+class Platform extends Phaser.GameObjects.Image {
+    constructor(scene, x, y, texture, frame) {
+        super(scene, x ?? 399, y ?? 147, texture || "volcano", frame ?? "Volcano Level Set_Platformer - Stone.png");
+        scene.physics.add.existing(this, false);
+        this.body.checkCollision.down = false;
+        this.body.checkCollision.left = false;
+        this.body.checkCollision.right = false;
+        this.body.pushable = false;
+        this.body.immovable = true;
+        this.body.setSize(128, 128, false);
+        /* START-USER-CTR-CODE */
+        // Write your code here.
+        /* END-USER-CTR-CODE */
+    }
+}
+/* END OF COMPILED CODE */
+// You can write more code here
+/// <reference path="./Platform.ts"/>
+/* START OF COMPILED CODE */
+class Ladder extends Platform {
+    constructor(scene, x, y, texture, frame) {
+        super(scene, x ?? 251, y ?? 128, texture || "volcano", frame ?? "Volcano Level Set_Platformer - Ladder.png");
+        this.setOrigin(0, 0);
+        this.body.setOffset(0, 80);
+        this.body.setSize(128, 48, false);
+        /* START-USER-CTR-CODE */
+        // Write your code here.
+        /* END-USER-CTR-CODE */
+    }
+}
+/* END OF COMPILED CODE */
+// You can write more code here
+// You can write more code here
 class MovingPlatform1 extends Phaser.GameObjects.Container {
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
+        scene.physics.add.existing(this, false);
+        this.body.checkCollision.down = false;
+        this.body.checkCollision.left = false;
+        this.body.checkCollision.right = false;
+        this.body.pushable = false;
+        this.body.immovable = true;
+        this.body.setOffset(14, 8);
+        this.body.setSize(227, 112, false);
         // p2
         const p2 = scene.add.image(0, 0, "volcano", "Volcano Level Set_Platformer - Ground 10.png");
         p2.setOrigin(0, 0);
@@ -335,7 +367,6 @@ class MovingPlatform1 extends Phaser.GameObjects.Container {
         p1.setOrigin(0, 0);
         this.add(p1);
         // this (components)
-        new PlatformPhysics(this);
         const thisHorizontalMove = new HorizontalMove(this);
         thisHorizontalMove.horizVelocity = 50;
         /* START-USER-CTR-CODE */
@@ -346,10 +377,17 @@ class MovingPlatform1 extends Phaser.GameObjects.Container {
 /* END OF COMPILED CODE */
 // You can write more code here
 // You can write more code here
-/* START OF COMPILED CODE */
 class MovingPlatform2 extends Phaser.GameObjects.Container {
     constructor(scene, x, y) {
         super(scene, x ?? 0, y ?? 0);
+        scene.physics.add.existing(this, false);
+        this.body.checkCollision.down = false;
+        this.body.checkCollision.left = false;
+        this.body.checkCollision.right = false;
+        this.body.pushable = false;
+        this.body.immovable = true;
+        this.body.setOffset(7, 8);
+        this.body.setSize(368, 17, false);
         // p3
         const p3 = scene.add.image(0, 0, "volcano", "Volcano Level Set_Platformer - Wooden Bridge.png");
         p3.setOrigin(0, 0);
@@ -363,7 +401,6 @@ class MovingPlatform2 extends Phaser.GameObjects.Container {
         p1.setOrigin(0, 0);
         this.add(p1);
         // this (components)
-        new PlatformPhysics(this);
         const thisHorizontalMove = new HorizontalMove(this);
         thisHorizontalMove.horizVelocity = 100;
         /* START-USER-CTR-CODE */
@@ -374,16 +411,30 @@ class MovingPlatform2 extends Phaser.GameObjects.Container {
 /* END OF COMPILED CODE */
 // You can write more code here
 // You can write more code here
-/* START OF COMPILED CODE */
 class Player extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
-        super(scene, x ?? 136, y ?? 177, texture || "player", frame ?? "Idle_001");
+        super(scene, x ?? 311, y ?? 204, texture || "player", frame ?? "Idle_001");
         this.setOrigin(0.5045282703122486, 0.8054902070420497);
+        scene.physics.add.existing(this, false);
+        this.body.gravity.y = 600;
+        this.body.drag.x = 1;
+        this.body.bounce.x = 0.2;
+        this.body.bounce.y = 0.2;
+        this.body.setOffset(102, 37.5);
+        this.body.setSize(67, 145, false);
+        // platformsCollider
+        const platformsCollider = scene.physics.add.collider(this, []);
+        // foodsCollider
+        const foodsCollider = scene.physics.add.overlap(this, [], this.playerVsFood, undefined, this);
+        this.platformsCollider = platformsCollider;
+        this.foodsCollider = foodsCollider;
         /* START-USER-CTR-CODE */
         this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this);
         this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.updatePlayer, this);
         /* END-USER-CTR-CODE */
     }
+    platformsCollider;
+    foodsCollider;
     platforms = [];
     foodItems = [];
     /* START-USER-CODE */
@@ -404,15 +455,8 @@ class Player extends Phaser.GameObjects.Sprite {
     eatSound;
     start() {
         // physics
-        const arcade = this.scene.physics;
-        arcade.add.existing(this);
-        const body = this.body;
-        body.setSize(80, 145);
-        body.setDrag(1, 0);
-        body.gravity.set(0, 600);
-        body.setBounce(0.2, 0.2);
-        arcade.add.collider(this, this.platforms);
-        arcade.add.overlap(this, this.foodItems, this.playerVsFood, undefined, this);
+        this.platformsCollider.object2 = this.platforms;
+        this.foodsCollider.object2 = this.foodItems;
         // animation
         this.play("player-Idle");
         // controller
@@ -563,6 +607,20 @@ class PlayerButton extends Phaser.GameObjects.Image {
 // You can write more code here
 // You can write more code here
 /* START OF COMPILED CODE */
+class Stone extends Platform {
+    constructor(scene, x, y, texture, frame) {
+        super(scene, x ?? 393, y ?? 213, texture || "volcano", frame ?? "Volcano Level Set_Platformer - Stone.png");
+        this.body.setOffset(0, 8);
+        this.body.setSize(128, 120, false);
+        /* START-USER-CTR-CODE */
+        // Write your code here.
+        /* END-USER-CTR-CODE */
+    }
+}
+/* END OF COMPILED CODE */
+// You can write more code here
+// You can write more code here
+/* START OF COMPILED CODE */
 class Level extends Phaser.Scene {
     constructor() {
         super("Level");
@@ -570,7 +628,7 @@ class Level extends Phaser.Scene {
         // Write your code here.
         /* END-USER-CTR-CODE */
     }
-    _create() {
+    editorCreate() {
         // backgroundLayer
         const backgroundLayer = this.add.layer();
         // background
@@ -618,19 +676,35 @@ class Level extends Phaser.Scene {
         platformsLayer.add(p2);
         // p1
         const p1 = this.add.image(0, 640, "volcano", "Volcano Level Set_Platformer - Ground 11.png");
+        this.physics.add.existing(p1, false);
+        p1.body.checkCollision.down = false;
+        p1.body.checkCollision.left = false;
+        p1.body.checkCollision.right = false;
+        p1.body.pushable = false;
+        p1.body.immovable = true;
+        p1.body.setOffset(0, 8);
+        p1.body.setSize(374, 32, false);
         platformsLayer.add(p1);
         // movingPlatform3
         const movingPlatform3 = new MovingPlatform1(this, 1920, 0);
         platformsLayer.add(movingPlatform3);
-        // container_2_1
-        const container_2_1 = new MovingPlatform2(this, 1882, 590);
-        platformsLayer.add(container_2_1);
+        // movingPlatform4
+        const movingPlatform4 = new MovingPlatform2(this, 1882, 590);
+        platformsLayer.add(movingPlatform4);
         // p9
         const p9 = this.add.image(2880, 640, "volcano", "Volcano Level Set_Platformer - Ground Additional 02.png");
         p9.setOrigin(0, 0);
         platformsLayer.add(p9);
         // p8
         const p8 = this.add.image(2816, 640, "volcano", "Volcano Level Set_Platformer - Ground 10.png");
+        this.physics.add.existing(p8, false);
+        p8.body.checkCollision.down = false;
+        p8.body.checkCollision.left = false;
+        p8.body.checkCollision.right = false;
+        p8.body.pushable = false;
+        p8.body.immovable = true;
+        p8.body.setOffset(10, 8);
+        p8.body.setSize(541, 27, false);
         platformsLayer.add(p8);
         // p7
         const p7 = this.add.image(2944, 640, "volcano", "Volcano Level Set_Platformer - Ground 11.png");
@@ -642,29 +716,29 @@ class Level extends Phaser.Scene {
         const p5 = this.add.image(3200, 640, "volcano", "Volcano Level Set_Platformer - Ground 11.png");
         platformsLayer.add(p5);
         // p12
-        const p12 = this.add.image(1536, 384, "volcano", "Volcano Level Set_Platformer - Stone.png");
+        const p12 = new Stone(this, 1536, 384);
         platformsLayer.add(p12);
         // p11
-        const p11 = this.add.image(1536, -256, "volcano", "Volcano Level Set_Platformer - Stone.png");
+        const p11 = new Stone(this, 1536, -256);
         platformsLayer.add(p11);
         // p10
-        const p10 = this.add.image(1664, -256, "volcano", "Volcano Level Set_Platformer - Stone.png");
+        const p10 = new Stone(this, 1664, -256);
         platformsLayer.add(p10);
-        // volcano_Level_Set_Environment___Crack_07_png
-        const volcano_Level_Set_Environment___Crack_07_png = this.add.image(117, 866, "volcano", "Volcano Level Set_Environment - Crack 07.png");
-        platformsLayer.add(volcano_Level_Set_Environment___Crack_07_png);
-        // volcano_Level_Set_Environment___Crack_06_png
-        const volcano_Level_Set_Environment___Crack_06_png = this.add.image(212, 664, "volcano", "Volcano Level Set_Environment - Crack 06.png");
-        platformsLayer.add(volcano_Level_Set_Environment___Crack_06_png);
-        // volcano_Level_Set_Environment___Crack_06_png_1
-        const volcano_Level_Set_Environment___Crack_06_png_1 = this.add.image(3098, 903, "volcano", "Volcano Level Set_Environment - Crack 06.png");
-        platformsLayer.add(volcano_Level_Set_Environment___Crack_06_png_1);
-        // volcano_Level_Set_Environment___Crack_05_png
-        const volcano_Level_Set_Environment___Crack_05_png = this.add.image(2999, 698, "volcano", "Volcano Level Set_Environment - Crack 05.png");
-        platformsLayer.add(volcano_Level_Set_Environment___Crack_05_png);
-        // volcano_Level_Set_Platformer___Brick_02_png_2_1
-        const volcano_Level_Set_Platformer___Brick_02_png_2_1 = this.add.image(1792, -256, "volcano", "Volcano Level Set_Platformer - Stone.png");
-        platformsLayer.add(volcano_Level_Set_Platformer___Brick_02_png_2_1);
+        // crack4
+        const crack4 = this.add.image(117, 866, "volcano", "Volcano Level Set_Environment - Crack 07.png");
+        platformsLayer.add(crack4);
+        // crack3
+        const crack3 = this.add.image(212, 664, "volcano", "Volcano Level Set_Environment - Crack 06.png");
+        platformsLayer.add(crack3);
+        // crack2
+        const crack2 = this.add.image(3098, 903, "volcano", "Volcano Level Set_Environment - Crack 06.png");
+        platformsLayer.add(crack2);
+        // crack1
+        const crack1 = this.add.image(2999, 698, "volcano", "Volcano Level Set_Environment - Crack 05.png");
+        platformsLayer.add(crack1);
+        // p13
+        const p13 = new Stone(this, 1792, -256);
+        platformsLayer.add(p13);
         // platformTopItemsLayer
         const platformTopItemsLayer = this.add.layer();
         // endFlag
@@ -708,7 +782,7 @@ class Level extends Phaser.Scene {
         // playerLayer
         const playerLayer = this.add.layer();
         // player
-        const player = new Player(this, 94, 395);
+        const player = new Player(this, 104, 482);
         playerLayer.add(player);
         // pickItemsLayer
         const pickItemsLayer = this.add.layer();
@@ -719,19 +793,19 @@ class Level extends Phaser.Scene {
         const meet2 = new FoodItem(this, 2250, 278, "volcano", "Volcano Level Set_Collectable Object - Meat.png");
         pickItemsLayer.add(meet2);
         // banana
-        const banana = new FoodItem(this, 480, 680, "volcano", "Tiny Caveman_Game Object - Banana.png");
+        const banana = new Banana(this, 1084, -261);
         pickItemsLayer.add(banana);
         // apple
-        const apple = new FoodItem(this, 600, 160, "volcano", "Tiny Caveman_Game Object - Apple.png");
+        const apple = new Apple(this, 2002, -488);
         pickItemsLayer.add(apple);
         // cherry
         const cherry = new FoodItem(this, 1200, 680, "volcano", "Tiny Caveman_Game Object - Cherry.png");
         pickItemsLayer.add(cherry);
         // apple2
-        const apple2 = new FoodItem(this, 2480, 680, "volcano", "Tiny Caveman_Game Object - Apple.png");
+        const apple2 = new Apple(this, 432, 239);
         pickItemsLayer.add(apple2);
         // banana1
-        const banana1 = new FoodItem(this, 1760, 680, "volcano", "Tiny Caveman_Game Object - Banana.png");
+        const banana1 = new Banana(this, 1760, 680);
         pickItemsLayer.add(banana1);
         // meet1
         const meet1 = new FoodItem(this, 747, 386);
@@ -755,7 +829,7 @@ class Level extends Phaser.Scene {
         debugText.setStyle({ "fontSize": "42px" });
         debugLayer.add(debugText);
         // lists
-        const platforms = [p1, p2, movingPlatform1, movingPlatform2, movingPlatform3, container_2_1, p8, p6, p5, p9, p7, p12, volcano_Level_Set_Platformer___Brick_02_png_2_1, p10, p11, p3, ladder1, ladder2, ladder3, ladder5, ladder4, ladder6];
+        const platforms = [p1, movingPlatform1, movingPlatform2, movingPlatform3, movingPlatform4, p8, p12, p13, p10, p11, ladder1, ladder2, ladder3, ladder5, ladder4, ladder6];
         const foodItems = [meet1, banana1, apple2, cherry, banana, meet3, meet2, apple];
         // background (components)
         const backgroundScrollFactor = new ScrollFactor(background);
@@ -781,37 +855,15 @@ class Level extends Phaser.Scene {
         const movingPlatform1HorizontalMove = HorizontalMove.getComponent(movingPlatform1);
         movingPlatform1HorizontalMove.minX = 310;
         movingPlatform1HorizontalMove.maxX = 924;
-        // p3 (components)
-        new PlatformPhysics(p3);
-        // p2 (components)
-        new PlatformPhysics(p2);
-        // p1 (components)
-        new PlatformPhysics(p1);
         // movingPlatform3 (components)
         const movingPlatform3HorizontalMove = HorizontalMove.getComponent(movingPlatform3);
         movingPlatform3HorizontalMove.horizVelocity = -50;
         movingPlatform3HorizontalMove.minX = 1900;
         movingPlatform3HorizontalMove.maxX = 2224;
-        // container_2_1 (components)
-        const container_2_1HorizontalMove = HorizontalMove.getComponent(container_2_1);
-        container_2_1HorizontalMove.minX = 1720;
-        container_2_1HorizontalMove.maxX = 2360;
-        // p8 (components)
-        new PlatformPhysics(p8);
-        // p7 (components)
-        new PlatformPhysics(p7);
-        // p6 (components)
-        new PlatformPhysics(p6);
-        // p5 (components)
-        new PlatformPhysics(p5);
-        // p12 (components)
-        new PlatformPhysics(p12);
-        // p11 (components)
-        new PlatformPhysics(p11);
-        // p10 (components)
-        new PlatformPhysics(p10);
-        // volcano_Level_Set_Platformer___Brick_02_png_2_1 (components)
-        new PlatformPhysics(volcano_Level_Set_Platformer___Brick_02_png_2_1);
+        // movingPlatform4 (components)
+        const movingPlatform4HorizontalMove = HorizontalMove.getComponent(movingPlatform4);
+        movingPlatform4HorizontalMove.minX = 1720;
+        movingPlatform4HorizontalMove.maxX = 2360;
         // skull1 (components)
         const skull1FollowObject = new FollowObject(skull1);
         skull1FollowObject.target = movingPlatform3;
@@ -830,6 +882,7 @@ class Level extends Phaser.Scene {
         // btn_left (components)
         const btn_leftPlayerController = PlayerController.getComponent(btn_left);
         btn_leftPlayerController.player = player;
+        btn_leftPlayerController.direction = "left";
         // btn_right (components)
         const btn_rightPlayerController = PlayerController.getComponent(btn_right);
         btn_rightPlayerController.player = player;
@@ -840,39 +893,15 @@ class Level extends Phaser.Scene {
         btn_upPlayerController.direction = "up";
         // debugText (components)
         new ScrollFactor(debugText);
-        this.background = background;
-        this.blava2 = blava2;
-        this.blava3 = blava3;
-        this.blava1 = blava1;
-        this.movingPlatform2 = movingPlatform2;
-        this.movingPlatform1 = movingPlatform1;
-        this.movingPlatform3 = movingPlatform3;
-        this.playerLayer = playerLayer;
         this.player = player;
-        this.debugText = debugText;
-        this.platforms = platforms;
-        this.foodItems = foodItems;
         this.events.emit("scene-awake");
     }
-    background;
-    blava2;
-    blava3;
-    blava1;
-    movingPlatform2;
-    movingPlatform1;
-    movingPlatform3;
-    playerLayer;
     player;
-    debugText;
-    platforms;
-    foodItems;
     /* START-USER-CODE */
     create() {
-        this._create();
-        if (this.player) {
-            this.cameras.main.setBounds(0, -800, 3000, 750 + 800);
-            this.cameras.main.startFollow(this.player);
-        }
+        this.editorCreate();
+        this.cameras.main.setBounds(0, -800, 3000, 750 + 800);
+        this.cameras.main.startFollow(this.player);
     }
 }
 /* END OF COMPILED CODE */

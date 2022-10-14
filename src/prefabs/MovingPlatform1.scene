@@ -15,11 +15,20 @@
             "id": "e7ff105b-0b60-40c8-baee-d80cb17a582f",
             "label": "container_1",
             "components": [
-                "PlatformPhysics",
                 "HorizontalMove"
             ],
             "HorizontalMove.horizVelocity": 50,
             "allowPickChildren": false,
+            "ArcadeComponent.active": true,
+            "down": false,
+            "left": false,
+            "right": false,
+            "pushable": false,
+            "immovable": true,
+            "body.width": 227,
+            "body.height": 112,
+            "body.offset.x": 14,
+            "body.offset.y": 8,
             "list": [
                 {
                     "type": "Image",
@@ -54,6 +63,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 2
+        "version": 3
     }
 }

@@ -3,6 +3,9 @@
 
 /* START OF COMPILED CODE */
 
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
 class HorizontalMove extends UserComponent {
 
 	constructor(gameObject: Phaser.GameObjects.Image|Phaser.GameObjects.Sprite|Phaser.GameObjects.Container) {
@@ -35,7 +38,7 @@ class HorizontalMove extends UserComponent {
 
 	update() {
 
-		const body = this.gameObject.body as Phaser.Physics.Arcade.Body;
+		const body = this.gameObject.body;
 
 		if (this.gameObject.x < this.minX) {
 

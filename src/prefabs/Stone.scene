@@ -1,41 +1,39 @@
 {
-    "id": "37217272-2539-426e-97ba-49812099c17b",
+    "id": "8f45727a-d419-4d94-8405-95063eb19bdf",
     "sceneType": "PREFAB",
     "settings": {
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT"
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1200,
+        "borderHeight": 750
     },
     "displayList": [
         {
             "prefabId": "9cd01380-cd4d-4b82-aeab-d2af9c7f111a",
-            "id": "c2321382-e9f1-48a2-800e-feccdc697613",
+            "id": "ac7ff084-022c-48a8-a278-3400a171460f",
             "unlock": [
                 "x",
                 "y",
+                "texture",
                 "body.offset.x",
                 "body.offset.y",
                 "body.width",
-                "body.height",
-                "texture",
-                "originX",
-                "originY"
+                "body.height"
             ],
-            "label": "ladder1",
+            "label": "platform",
             "components": [],
             "texture": {
                 "key": "volcano",
-                "frame": "Volcano Level Set_Platformer - Ladder.png"
+                "frame": "Volcano Level Set_Platformer - Stone.png"
             },
-            "x": 251,
-            "y": 128,
-            "originX": 0,
-            "originY": 0,
+            "x": 393,
+            "y": 213,
             "body.width": 128,
-            "body.height": 48,
+            "body.height": 120,
             "body.offset.x": 0,
-            "body.offset.y": 80
+            "body.offset.y": 8
         }
     ],
     "plainObjects": [],
