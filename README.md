@@ -14,7 +14,14 @@ This is a Phaser Editor 2D v3 game example.
 
 ## Compiles the source code
 
-This project is based on TypeScript so for getting the game running you need to compile the TypeScript files:
+This project is based on TypeScript so for getting the game running you need to compile the TypeScript files. But first, install the dependencies:
+
+```bash
+$ npm install
+$ npm update
+```
+
+Now you can build the game:
 
 ```bash
 $ npm run build
@@ -33,7 +40,6 @@ $ npm run watch
 * If you have NodeJS installed, you can run the editor using the `editor` NPM script, defined in the `package.json` file:
 
     ```bash
-    $ npm install
     $ npm run editor
     ```
 
