@@ -3,24 +3,39 @@
 
 /* START OF COMPILED CODE */
 
-interface Player {
+import Phaser from "phaser";
+/* START-USER-IMPORTS */
+import FoodItem from "./FoodItem";
+/* END-USER-IMPORTS */
+
+export default interface Player {
 
 	 body: Phaser.Physics.Arcade.Body;
 }
 
-class Player extends Phaser.GameObjects.Sprite {
+export default class Player extends Phaser.GameObjects.Sprite {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 311, y ?? 204, texture || "player", frame ?? "Idle_001");
+		super(scene, x ?? 290.96234741048465, y ?? 207.0022148582068, texture || "player", frame ?? "Idle_001");
 
-		this.setOrigin(0.5045282703122486, 0.8054902070420497);
+		this.setOrigin(0.5, 0.8096661022845779);
 		scene.physics.add.existing(this, false);
-		this.body.gravity.y = 600;
-		this.body.drag.x = 1;
-		this.body.bounce.x = 0.2;
-		this.body.bounce.y = 0.2;
-		this.body.setOffset(102, 37.5);
-		this.body.setSize(67, 145, false);
+		this.body.gravity.y = 1400;
+		this.body.allowDrag = false;
+		this.body.setOffset(99.5, 124);
+		this.body.setSize(81, 87, false);
+
+		// leftKey
+		const leftKey = this.scene.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+
+		// rightKey
+		const rightKey = this.scene.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+
+		// upKey
+		const upKey = this.scene.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
+
+		// spaceKey
+		const spaceKey = this.scene.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
 		// platformsCollider
 		const platformsCollider = scene.physics.add.collider(this, []);
@@ -30,6 +45,10 @@ class Player extends Phaser.GameObjects.Sprite {
 
 		this.platformsCollider = platformsCollider;
 		this.foodsCollider = foodsCollider;
+		this.leftKey = leftKey;
+		this.rightKey = rightKey;
+		this.upKey = upKey;
+		this.spaceKey = spaceKey;
 
 		/* START-USER-CTR-CODE */
 
@@ -41,6 +60,10 @@ class Player extends Phaser.GameObjects.Sprite {
 
 	private platformsCollider: Phaser.Physics.Arcade.Collider;
 	private foodsCollider: Phaser.Physics.Arcade.Collider;
+	private leftKey: Phaser.Input.Keyboard.Key;
+	private rightKey: Phaser.Input.Keyboard.Key;
+	private upKey: Phaser.Input.Keyboard.Key;
+	private spaceKey: Phaser.Input.Keyboard.Key;
 	public platforms: Phaser.GameObjects.GameObject[] = [];
 	public foodItems: FoodItem[] = [];
 
@@ -49,19 +72,8 @@ class Player extends Phaser.GameObjects.Sprite {
 	private leftDown = false;
 	private rightDown = false;
 	private upDown = false;
-	private leftKey: Phaser.Input.Keyboard.Key | undefined;
-	private rightKey: Phaser.Input.Keyboard.Key | undefined;
-	private upKey: Phaser.Input.Keyboard.Key | undefined;
-	private spaceKey: Phaser.Input.Keyboard.Key | undefined;
 	private jumpsCount = 0;
 	private lastWalkTime = 0;
-	private isFlying = false;
-	private stopSound: Phaser.Sound.BaseSound | undefined;
-	private walkingSound: Phaser.Sound.BaseSound | undefined;
-	private jumpSound: Phaser.Sound.BaseSound | undefined;
-	private flySound: Phaser.Sound.BaseSound | undefined;
-	private eatSound: Phaser.Sound.BaseSound | undefined;
-
 
 	start() {
 
@@ -76,32 +88,16 @@ class Player extends Phaser.GameObjects.Sprite {
 
 		// controller
 
-		this.leftKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
-		this.rightKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-		this.upKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
-		this.spaceKey = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-
 		this.jumpsCount = 0;
 
 		this.lastWalkTime = 0;
 
-		this.isFlying = true;
-
 		// sound
-
-		this.stopSound = this.scene.sound.add("fall-stop");
-		this.walkingSound = this.scene.sound.add("walk");
-		this.jumpSound = this.scene.sound.add("jump");
-		this.flySound = this.scene.sound.add("fly");
-		this.eatSound = this.scene.sound.add("eat");
 	}
 
-	private playerVsFood(player: Phaser.Types.Physics.Arcade.GameObjectWithBody,
-		foodItem: Phaser.Types.Physics.Arcade.GameObjectWithBody) {
+	private playerVsFood(player: any, foodItem: any): void {
 
 		(foodItem as FoodItem).taken();
-
-		this.eatSound?.play();
 	}
 
 	private isKeyDown(key?: Phaser.Input.Keyboard.Key) {
@@ -122,19 +118,10 @@ class Player extends Phaser.GameObjects.Sprite {
 
 		const body = this.body;
 
-		const xVelocity = 200;
+		const xVelocity = 300;
+		const yVelocity = -820;
 
 		const touchingDown = body.touching.down;
-
-		if (this.isFlying && touchingDown) {
-
-			if (this.stopSound && !this.stopSound.isPlaying) {
-
-				this.stopSound.play();
-			}
-		}
-
-		this.isFlying = !touchingDown;
 
 		if (touchingDown) {
 
@@ -153,11 +140,6 @@ class Player extends Phaser.GameObjects.Sprite {
 			if (touchingDown) {
 
 				this.lastWalkTime = time;
-
-				if (this.walkingSound && !this.walkingSound.isPlaying) {
-
-					this.walkingSound.play();
-				}
 			}
 
 			this.flipX = true;
@@ -170,11 +152,6 @@ class Player extends Phaser.GameObjects.Sprite {
 			if (touchingDown) {
 
 				this.lastWalkTime = time;
-
-				if (this.walkingSound && !this.walkingSound.isPlaying) {
-
-					this.walkingSound.play();
-				}
 			}
 
 			this.flipX = false;
@@ -188,16 +165,7 @@ class Player extends Phaser.GameObjects.Sprite {
 				if (this.jumpsCount < 2) {
 
 					this.jumpsCount++;
-					body.velocity.y = -420;
-
-					this.jumpSound?.play();
-
-					if (!touchingDown) {
-
-						this.flySound?.play();
-					}
-
-					this.walkingSound?.stop();
+					body.velocity.y = yVelocity;
 				}
 			}
 		}
@@ -216,17 +184,20 @@ class Player extends Phaser.GameObjects.Sprite {
 
 			const current = this.anims.currentAnim;
 
-			if (current.key === "player-Jump Start") {
+			if (current) {
 
-				if (!this.anims.isPlaying) {
+				if (current.key === "player-Jump Start") {
 
-					this.play("player-Jump Loop", true);
-				}
-			} else {
+					if (!this.anims.isPlaying) {
 
-				if (current.key !== "player-Jump Loop") {
+						this.play("player-Jump Loop", true);
+					}
+				} else {
 
-					this.play("player-Jump Start", true);
+					if (current.key !== "player-Jump Loop") {
+
+						this.play("player-Jump Start", true);
+					}
 				}
 			}
 		}
@@ -254,7 +225,6 @@ class Player extends Phaser.GameObjects.Sprite {
 
 		if (this.y > bounds.y + bounds.height + 200) {
 
-			this.scene.sound.play("dead");
 			this.setPosition(130, 360);
 		}
 	}

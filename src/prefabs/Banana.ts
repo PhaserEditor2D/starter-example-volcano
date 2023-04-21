@@ -3,7 +3,11 @@
 
 /* START OF COMPILED CODE */
 
-class Banana extends FoodItem {
+import FoodItem from "./FoodItem";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
+export default class Banana extends FoodItem {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 441, y ?? 147, texture || "volcano", frame ?? "Tiny Caveman_Game Object - Banana.png");

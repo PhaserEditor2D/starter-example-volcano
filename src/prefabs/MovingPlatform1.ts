@@ -3,12 +3,16 @@
 
 /* START OF COMPILED CODE */
 
-interface MovingPlatform1 {
+import Phaser from "phaser";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
+export default interface MovingPlatform1 {
 
 	 body: Phaser.Physics.Arcade.Body;
 }
 
-class MovingPlatform1 extends Phaser.GameObjects.Container {
+export default class MovingPlatform1 extends Phaser.GameObjects.Container {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
@@ -31,10 +35,6 @@ class MovingPlatform1 extends Phaser.GameObjects.Container {
 		const p1 = scene.add.image(128, 0, "volcano", "Volcano Level Set_Platformer - Ground 12.png");
 		p1.setOrigin(0, 0);
 		this.add(p1);
-
-		// this (components)
-		const thisHorizontalMove = new HorizontalMove(this);
-		thisHorizontalMove.horizVelocity = 50;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

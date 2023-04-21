@@ -3,7 +3,13 @@
 
 /* START OF COMPILED CODE */
 
-class Preload extends Phaser.Scene {
+import Phaser from "phaser";
+import PreloadBarUpdaterScript from "../script-nodes/PreloadBarUpdaterScript";
+/* START-USER-IMPORTS */
+import assetPackUrl from "../../static/assets/asset-pack.json";
+/* END-USER-IMPORTS */
+
+export default class Preload extends Phaser.Scene {
 
 	constructor() {
 		super("Preload");
@@ -13,26 +19,32 @@ class Preload extends Phaser.Scene {
 		/* END-USER-CTR-CODE */
 	}
 
-	editorPreload(): void {
-
-		this.load.pack("asset-pack", "assets/asset-pack.json");
-	}
-
 	editorCreate(): void {
 
 		// guapen
-		const guapen = this.add.image(600, 317, "guapen");
-		guapen.scaleX = 0.5915891440784282;
-		guapen.scaleY = 0.5915891440784282;
+		const guapen = this.add.image(505.0120544433594, 360, "guapen");
+		guapen.scaleX = 0.32715486817515643;
+		guapen.scaleY = 0.32715486817515643;
 
-		// progress
-		const progress = this.add.text(600, 447, "", {});
-		progress.setOrigin(0.5, 0.5);
-		progress.text = "0%";
-		progress.setStyle({ "fontSize": "30px" });
+		// progressBar
+		const progressBar = this.add.rectangle(553.0120849609375, 361, 256, 20);
+		progressBar.setOrigin(0, 0);
+		progressBar.isFilled = true;
+		progressBar.fillColor = 14737632;
 
-		// progress (components)
-		new PreloadText(progress);
+		// preloadUpdater
+		new PreloadBarUpdaterScript(progressBar);
+
+		// progressBarBg
+		const progressBarBg = this.add.rectangle(553.0120849609375, 361, 256, 20);
+		progressBarBg.setOrigin(0, 0);
+		progressBarBg.fillColor = 14737632;
+		progressBarBg.isStroked = true;
+
+		// loadingText
+		const loadingText = this.add.text(552.0120849609375, 329, "", {});
+		loadingText.text = "Loading...";
+		loadingText.setStyle({ "color": "#e0e0e0", "fontFamily": "arial", "fontSize": "20px" });
 
 		this.events.emit("scene-awake");
 	}
@@ -45,9 +57,12 @@ class Preload extends Phaser.Scene {
 
 		this.editorCreate();
 
-		this.editorPreload();
+		this.load.pack("asset-pack", assetPackUrl);		
+	}
 
-		this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("Level"));
+	create() {
+
+		this.scene.start("Level");
 	}
 
 	/* END-USER-CODE */

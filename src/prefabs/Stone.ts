@@ -3,7 +3,11 @@
 
 /* START OF COMPILED CODE */
 
-class Stone extends Platform {
+import Platform from "./Platform";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
+export default class Stone extends Platform {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 393, y ?? 213, texture || "volcano", frame ?? "Volcano Level Set_Platformer - Stone.png");

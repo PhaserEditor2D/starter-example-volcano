@@ -3,12 +3,16 @@
 
 /* START OF COMPILED CODE */
 
-interface Platform {
+import Phaser from "phaser";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
+export default interface Platform {
 
 	 body: Phaser.Physics.Arcade.Body;
 }
 
-class Platform extends Phaser.GameObjects.Image {
+export default class Platform extends Phaser.GameObjects.Image {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 399, y ?? 147, texture || "volcano", frame ?? "Volcano Level Set_Platformer - Stone.png");

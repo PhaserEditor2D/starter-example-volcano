@@ -2,26 +2,46 @@
     "id": "f7d3ed5d-93cf-46d1-ab9e-d4c10ddc94e5",
     "sceneType": "PREFAB",
     "settings": {
+        "exportClass": true,
+        "autoImport": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT"
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1280,
+        "borderHeight": 720
     },
     "displayList": [
         {
             "type": "Image",
             "id": "a188a636-94e6-4d2e-ad00-6ca284030cf6",
             "label": "btn_up",
-            "components": [
-                "ScrollFactor",
-                "PlayerController"
-            ],
+            "components": [],
             "texture": {
                 "key": "ui",
                 "frame": "btn-up"
             },
             "x": 81,
-            "y": 72
+            "y": 72,
+            "list": [
+                {
+                    "prefabId": "844ca766-244c-4ade-b490-bbab3b42d0e2",
+                    "id": "669d3ccd-fa26-4b3c-b831-2292d48f6420",
+                    "label": "scrollFactorScript",
+                    "components": [],
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "3df0e960-12e6-44c8-84eb-848ce3e90116",
+                    "id": "d14cbf36-7962-447c-aa00-b73866fcdb6c",
+                    "label": "playerControllerScript",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
         }
     ],
     "plainObjects": [],
@@ -29,6 +49,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 2
+        "version": 3
     }
 }
