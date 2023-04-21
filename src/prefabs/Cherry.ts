@@ -3,7 +3,11 @@
 
 /* START OF COMPILED CODE */
 
-class Cherry extends FoodItem {
+import FoodItem from "./FoodItem";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
+export default class Cherry extends FoodItem {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 394, y ?? 197, texture || "volcano", frame ?? "Tiny Caveman_Game Object - Cherry.png");

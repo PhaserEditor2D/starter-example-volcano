@@ -2,7 +2,11 @@
 
 /* START OF COMPILED CODE */
 
-class Apple extends FoodItem {
+import FoodItem from "./FoodItem";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
+export default class Apple extends FoodItem {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 359, y ?? 153, texture || "volcano", frame ?? "Tiny Caveman_Game Object - Apple.png");

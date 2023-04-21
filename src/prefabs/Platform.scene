@@ -2,10 +2,14 @@
     "id": "9cd01380-cd4d-4b82-aeab-d2af9c7f111a",
     "sceneType": "PREFAB",
     "settings": {
+        "exportClass": true,
+        "autoImport": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT"
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1280,
+        "borderHeight": 720
     },
     "displayList": [
         {
@@ -26,7 +30,8 @@
             "pushable": false,
             "immovable": true,
             "body.width": 128,
-            "body.height": 128
+            "body.height": 128,
+            "list": []
         }
     ],
     "plainObjects": [],

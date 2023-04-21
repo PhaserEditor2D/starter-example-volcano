@@ -1,0 +1,63 @@
+{
+    "id": "c7a6a49e-e3f2-4786-88c3-4a93b572a86e",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1280,
+        "borderHeight": 720
+    },
+    "displayList": [
+        {
+            "prefabId": "5e746613-c01a-42aa-8681-4950bb2f23ce",
+            "id": "b0cac7f6-5558-453e-b9a3-f5808c327b5f",
+            "label": "spriteScriptNode",
+            "components": [],
+            "nestedPrefabs": [],
+            "list": []
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+                    "name": "horizVelocity",
+                    "label": "Horizontal Velocity",
+                    "tooltip": "The velocity of the object.",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "minX",
+                    "label": "Min Position X",
+                    "tooltip": "Min X",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "maxX",
+                    "label": "Max Position X",
+                    "tooltip": "Max X",
+                    "defValue": 3070,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+    ]
+}

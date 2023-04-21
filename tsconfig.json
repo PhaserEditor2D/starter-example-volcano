@@ -1,11 +1,29 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-        "target": "esnext",
-        "outFile": "game.js",
-        "strict": true,
-        "types": [
-            "phaser"
-        ]
-    }
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"strict": true,
+		"noEmit": false,
+		"importHelpers": true,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"sourceMap": true,
+		"baseUrl": "./src",
+		"paths": {
+		  "~/*": ["./*"]
+		},
+        "outDir": "./dist",
+		"typeRoots": [
+			"node_modules/@types",
+			"node_module/phaser/types"
+		],
+		"types": [
+			"phaser"
+		]
+	},
+	"include": [
+		"src/**/*",
+		"types/**/*"
+	]
 }

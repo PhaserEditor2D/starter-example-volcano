@@ -1,0 +1,44 @@
+{
+    "id": "87c25255-3a43-404e-b82f-95f8f140ebb9",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1280,
+        "borderHeight": 720
+    },
+    "displayList": [
+        {
+            "prefabId": "5e746613-c01a-42aa-8681-4950bb2f23ce",
+            "id": "751f3871-5470-4a2d-af5f-9c2d9c98e65f",
+            "label": "spriteScriptNode",
+            "components": [],
+            "nestedPrefabs": [],
+            "list": []
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+            "name": "target",
+            "label": "Target Object",
+            "tooltip": "The object to follow",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "Phaser.GameObjects.Image|Phaser.GameObjects.Container|Phaser.GameObjects.Sprite"
+            }
+        }
+    ]
+}

@@ -2,10 +2,14 @@
     "id": "ad30b4e1-19b5-4a8c-8b9b-bdecec788df1",
     "sceneType": "PREFAB",
     "settings": {
+        "exportClass": true,
+        "autoImport": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT"
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1280,
+        "borderHeight": 720
     },
     "displayList": [
         {
@@ -21,7 +25,8 @@
             "y": 70,
             "ArcadeComponent.active": true,
             "body.width": 128,
-            "body.height": 128
+            "body.height": 128,
+            "list": []
         }
     ],
     "plainObjects": [],

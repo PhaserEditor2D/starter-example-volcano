@@ -4,20 +4,21 @@
     "settings": {
         "snapWidth": 128,
         "snapHeight": 128,
+        "exportClass": true,
+        "autoImport": true,
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
-        "compilerOutputLanguage": "TYPE_SCRIPT"
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1280,
+        "borderHeight": 720
     },
     "displayList": [
         {
             "type": "Container",
             "id": "e7ff105b-0b60-40c8-baee-d80cb17a582f",
             "label": "container_1",
-            "components": [
-                "HorizontalMove"
-            ],
-            "HorizontalMove.horizVelocity": 50,
+            "components": [],
             "allowPickChildren": false,
             "ArcadeComponent.active": true,
             "down": false,
@@ -40,7 +41,8 @@
                         "frame": "Volcano Level Set_Platformer - Ground 10.png"
                     },
                     "originX": 0,
-                    "originY": 0
+                    "originY": 0,
+                    "list": []
                 },
                 {
                     "type": "Image",
@@ -53,7 +55,8 @@
                     },
                     "x": 128,
                     "originX": 0,
-                    "originY": 0
+                    "originY": 0,
+                    "list": []
                 }
             ]
         }

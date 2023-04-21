@@ -1,0 +1,59 @@
+{
+    "id": "3df0e960-12e6-44c8-84eb-848ce3e90116",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1280,
+        "borderHeight": 720
+    },
+    "displayList": [
+        {
+            "prefabId": "5e746613-c01a-42aa-8681-4950bb2f23ce",
+            "id": "d2bfdd49-0a41-43f8-8d55-0b56b5e4dfac",
+            "label": "spriteScriptNode",
+            "components": [],
+            "nestedPrefabs": [],
+            "list": []
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+                    "name": "player",
+                    "label": "Player",
+                    "tooltip": "Player",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "expression",
+                        "expressionType": "Player|undefined"
+                    }
+                },
+                {
+                    "name": "direction",
+                    "label": "Direction",
+                    "tooltip": "Direction",
+                    "defValue": "left",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "option",
+                        "options": [
+                            "left",
+                            "right",
+                            "up"
+                        ]
+                    }
+                }
+    ]
+}

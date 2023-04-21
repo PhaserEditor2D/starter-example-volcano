@@ -1,0 +1,293 @@
+{
+	"textures": [
+		{
+			"image": "volcano-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 500,
+				"h": 516
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "Volcano Level Set_Platformer - Ground Additional 03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 320,
+						"h": 320
+					},
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 16,
+						"w": 308,
+						"h": 304
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 308,
+						"h": 304
+					}
+				},
+				{
+					"filename": "Volcano Level Set_Platformer - Ground 11.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 128,
+						"h": 128
+					},
+					"frame": {
+						"x": 1,
+						"y": 307,
+						"w": 128,
+						"h": 128
+					}
+				},
+				{
+					"filename": "Volcano Level Set_Platformer - Ladder.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 2,
+						"w": 122,
+						"h": 124
+					},
+					"frame": {
+						"x": 311,
+						"y": 1,
+						"w": 122,
+						"h": 124
+					}
+				},
+				{
+					"filename": "Volcano Level Set_Platformer - Ground 10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 125,
+						"h": 121
+					},
+					"frame": {
+						"x": 131,
+						"y": 307,
+						"w": 125,
+						"h": 121
+					}
+				},
+				{
+					"filename": "Volcano Level Set_Platformer - Stone.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 2,
+						"w": 122,
+						"h": 124
+					},
+					"frame": {
+						"x": 311,
+						"y": 127,
+						"w": 122,
+						"h": 124
+					}
+				},
+				{
+					"filename": "Volcano Level Set_Environment - Skull.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 80
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 2,
+						"w": 136,
+						"h": 78
+					},
+					"frame": {
+						"x": 1,
+						"y": 437,
+						"w": 136,
+						"h": 78
+					}
+				},
+				{
+					"filename": "Volcano Level Set_Environment - Red Flag.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 3,
+						"w": 58,
+						"h": 124
+					},
+					"frame": {
+						"x": 435,
+						"y": 1,
+						"w": 58,
+						"h": 124
+					}
+				},
+				{
+					"filename": "Volcano Level Set_Environment - White Flag.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 3,
+						"w": 58,
+						"h": 124
+					},
+					"frame": {
+						"x": 435,
+						"y": 127,
+						"w": 58,
+						"h": 124
+					}
+				},
+				{
+					"filename": "Volcano Level Set_Platformer - Ground 12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 125,
+						"h": 121
+					},
+					"frame": {
+						"x": 311,
+						"y": 253,
+						"w": 125,
+						"h": 121
+					}
+				},
+				{
+					"filename": "Volcano Level Set_Platformer - Wooden Bridge.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 3,
+						"w": 122,
+						"h": 26
+					},
+					"frame": {
+						"x": 139,
+						"y": 430,
+						"w": 122,
+						"h": 26
+					}
+				},
+				{
+					"filename": "Volcano Level Set_Collectable Object - Meat.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 3,
+						"w": 122,
+						"h": 122
+					},
+					"frame": {
+						"x": 263,
+						"y": 376,
+						"w": 122,
+						"h": 122
+					}
+				},
+				{
+					"filename": "Volcano Level Set_Environment - Signpost 01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 8,
+						"w": 112,
+						"h": 120
+					},
+					"frame": {
+						"x": 387,
+						"y": 376,
+						"w": 112,
+						"h": 120
+					}
+				},
+				{
+					"filename": "Volcano Level Set_Environment - Lava 02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 64,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 5,
+						"w": 62,
+						"h": 22
+					},
+					"frame": {
+						"x": 139,
+						"y": 458,
+						"w": 62,
+						"h": 22
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:e5481a45c2de76caabe5fa5ead7298f4:566bc6b3f36e5703b4d35e6123f5521e:2a43dd78155c9fa81d725f37f0d19e57$"
+	}
+}

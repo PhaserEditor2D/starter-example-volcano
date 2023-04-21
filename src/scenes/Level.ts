@@ -3,7 +3,21 @@
 
 /* START OF COMPILED CODE */
 
-class Level extends Phaser.Scene {
+import Phaser from "phaser";
+import ScrollFactorScript from "../script-nodes/ScrollFactorScript";
+import MovingPlatform1 from "../prefabs/MovingPlatform1";
+import HorizontalMoveScript from "../script-nodes/HorizontalMoveScript";
+import MovingPlatform2 from "../prefabs/MovingPlatform2";
+import Stone from "../prefabs/Stone";
+import FollowObjectScript from "../script-nodes/FollowObjectScript";
+import Ladder from "../prefabs/Ladder";
+import Player from "../prefabs/Player";
+import FoodItem from "../prefabs/FoodItem";
+import PlayerButton from "../prefabs/PlayerButton";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
+export default class Level extends Phaser.Scene {
 
 	constructor() {
 		super("Level");
@@ -23,25 +37,14 @@ class Level extends Phaser.Scene {
 		background.scaleX = 1.1;
 		background.scaleY = 1.1;
 		background.setOrigin(0, 0);
-		background.tintTopRight = 10494241;
-		background.tintBottomLeft = 7220011;
-		background.tintBottomRight = 2433506;
+		background.tintTopLeft = 16777215;
+		background.tintTopRight = 16777215;
+		background.tintBottomLeft = 16777215;
+		background.tintBottomRight = 16777215;
 		backgroundLayer.add(background);
 
-		// blava2
-		const blava2 = this.add.image(1334, 0, "Volcano Level Set_Background - Layer 01");
-		blava2.setOrigin(0, 0);
-		backgroundLayer.add(blava2);
-
-		// blava3
-		const blava3 = this.add.image(2668, 0, "Volcano Level Set_Background - Layer 01");
-		blava3.setOrigin(0, 0);
-		backgroundLayer.add(blava3);
-
-		// blava1
-		const blava1 = this.add.image(0, -1, "Volcano Level Set_Background - Layer 01");
-		blava1.setOrigin(0, 0);
-		backgroundLayer.add(blava1);
+		// scrollFactorScript_1
+		const scrollFactorScript_1 = new ScrollFactorScript(background);
 
 		// platformBottomItemsLayer
 		const platformBottomItemsLayer = this.add.layer();
@@ -57,12 +60,18 @@ class Level extends Phaser.Scene {
 		const movingPlatform2 = new MovingPlatform1(this, 890, 256);
 		platformsLayer.add(movingPlatform2);
 
+		// horizontalMoveScript_3
+		const horizontalMoveScript_3 = new HorizontalMoveScript(movingPlatform2);
+
 		// movingPlatform1
 		const movingPlatform1 = new MovingPlatform2(this, 311, 577);
 		platformsLayer.add(movingPlatform1);
 
+		// horizontalMoveScript_2
+		const horizontalMoveScript_2 = new HorizontalMoveScript(movingPlatform1);
+
 		// p4
-		const p4 = this.add.image(128, 768, "volcano", "Volcano Level Set_Platformer - Ground Additional 01.png");
+		const p4 = this.add.image(128, 768, "volcano", "Volcano Level Set_Platformer - Ground Additional 03.png");
 		platformsLayer.add(p4);
 
 		// p3
@@ -89,12 +98,18 @@ class Level extends Phaser.Scene {
 		const movingPlatform3 = new MovingPlatform1(this, 1920, 0);
 		platformsLayer.add(movingPlatform3);
 
+		// horizontalMoveScript_1
+		const horizontalMoveScript_1 = new HorizontalMoveScript(movingPlatform3);
+
 		// movingPlatform4
 		const movingPlatform4 = new MovingPlatform2(this, 1882, 590);
 		platformsLayer.add(movingPlatform4);
 
+		// horizontalMoveScript
+		const horizontalMoveScript = new HorizontalMoveScript(movingPlatform4);
+
 		// p9
-		const p9 = this.add.image(2880, 640, "volcano", "Volcano Level Set_Platformer - Ground Additional 02.png");
+		const p9 = this.add.image(2880, 640, "volcano", "Volcano Level Set_Platformer - Ground Additional 03.png");
 		p9.setOrigin(0, 0);
 		platformsLayer.add(p9);
 
@@ -134,22 +149,6 @@ class Level extends Phaser.Scene {
 		const p10 = new Stone(this, 1664, -256);
 		platformsLayer.add(p10);
 
-		// crack4
-		const crack4 = this.add.image(117, 866, "volcano", "Volcano Level Set_Environment - Crack 07.png");
-		platformsLayer.add(crack4);
-
-		// crack3
-		const crack3 = this.add.image(212, 664, "volcano", "Volcano Level Set_Environment - Crack 06.png");
-		platformsLayer.add(crack3);
-
-		// crack2
-		const crack2 = this.add.image(3098, 903, "volcano", "Volcano Level Set_Environment - Crack 06.png");
-		platformsLayer.add(crack2);
-
-		// crack1
-		const crack1 = this.add.image(2999, 698, "volcano", "Volcano Level Set_Environment - Crack 05.png");
-		platformsLayer.add(crack1);
-
 		// p13
 		const p13 = new Stone(this, 1792, -256);
 		platformsLayer.add(p13);
@@ -169,13 +168,22 @@ class Level extends Phaser.Scene {
 		const skull1 = this.add.image(2093, -28, "volcano", "Volcano Level Set_Environment - Skull.png");
 		platformTopItemsLayer.add(skull1);
 
+		// followObjectScript_3
+		const followObjectScript_3 = new FollowObjectScript(skull1);
+
 		// lava2
-		const lava2 = this.add.image(1059, 250, "volcano", "Volcano Level Set_Environment - Lava 03.png");
+		const lava2 = this.add.image(1059, 250, "volcano", "Volcano Level Set_Environment - Lava 02.png");
 		platformTopItemsLayer.add(lava2);
 
+		// followObjectScript_2
+		const followObjectScript_2 = new FollowObjectScript(lava2);
+
 		// lava1
-		const lava1 = this.add.image(599, 576, "volcano", "Volcano Level Set_Environment - Lava 03.png");
+		const lava1 = this.add.image(599, 576, "volcano", "Volcano Level Set_Environment - Lava 02.png");
 		platformTopItemsLayer.add(lava1);
+
+		// followObjectScript_1
+		const followObjectScript_1 = new FollowObjectScript(lava1);
 
 		// lava3
 		const lava3 = this.add.image(233, 571, "volcano", "Volcano Level Set_Environment - Lava 02.png");
@@ -208,11 +216,14 @@ class Level extends Phaser.Scene {
 		const ladder6 = new Ladder(this, 952, 321);
 		laddersLayer.add(ladder6);
 
+		// followObjectScript
+		const followObjectScript = new FollowObjectScript(ladder6);
+
 		// playerLayer
 		const playerLayer = this.add.layer();
 
 		// player
-		const player = new Player(this, 104, 482);
+		const player = new Player(this, 104, 482, "player", "Idle_001");
 		playerLayer.add(player);
 
 		// pickItemsLayer
@@ -225,26 +236,6 @@ class Level extends Phaser.Scene {
 		// meet2
 		const meet2 = new FoodItem(this, 2250, 278, "volcano", "Volcano Level Set_Collectable Object - Meat.png");
 		pickItemsLayer.add(meet2);
-
-		// banana
-		const banana = new Banana(this, 1084, -261);
-		pickItemsLayer.add(banana);
-
-		// apple
-		const apple = new Apple(this, 2002, -488);
-		pickItemsLayer.add(apple);
-
-		// cherry
-		const cherry = new FoodItem(this, 1200, 680, "volcano", "Tiny Caveman_Game Object - Cherry.png");
-		pickItemsLayer.add(cherry);
-
-		// apple2
-		const apple2 = new Apple(this, 432, 239);
-		pickItemsLayer.add(apple2);
-
-		// banana1
-		const banana1 = new Banana(this, 1760, 680);
-		pickItemsLayer.add(banana1);
 
 		// meet1
 		const meet1 = new FoodItem(this, 747, 386);
@@ -266,96 +257,62 @@ class Level extends Phaser.Scene {
 		controlsLayer.add(btn_up);
 
 		// debugLayer
-		const debugLayer = this.add.layer();
-
-		// debugText
-		const debugText = this.add.text(224, -106, "", {});
-		debugText.text = "Debug text.";
-		debugText.setStyle({ "fontSize": "42px" });
-		debugLayer.add(debugText);
+		this.add.layer();
 
 		// lists
 		const platforms = [p1, movingPlatform1, movingPlatform2, movingPlatform3, movingPlatform4, p8, p12, p13, p10, p11, ladder1, ladder2, ladder3, ladder5, ladder4, ladder6];
-		const foodItems = [meet1, banana1, apple2, cherry, banana, meet3, meet2, apple];
+		const foodItems = [meet1, meet3, meet2];
 
-		// background (components)
-		const backgroundScrollFactor = new ScrollFactor(background);
-		backgroundScrollFactor.x = 0.1;
+		// scrollFactorScript_1 (prefab fields)
+		scrollFactorScript_1.x = 0.1;
 
-		// blava2 (components)
-		const blava2ScrollFactor = new ScrollFactor(blava2);
-		blava2ScrollFactor.x = 1.2;
-		blava2ScrollFactor.y = 1;
+		// horizontalMoveScript_3 (prefab fields)
+		horizontalMoveScript_3.horizVelocity = -50;
+		horizontalMoveScript_3.minX = 540;
+		horizontalMoveScript_3.maxX = 1170;
 
-		// blava3 (components)
-		const blava3ScrollFactor = new ScrollFactor(blava3);
-		blava3ScrollFactor.x = 1.2;
-		blava3ScrollFactor.y = 1;
+		// horizontalMoveScript_2 (prefab fields)
+		horizontalMoveScript_2.horizVelocity = 100;
+		horizontalMoveScript_2.minX = 310;
+		horizontalMoveScript_2.maxX = 924;
 
-		// blava1 (components)
-		const blava1ScrollFactor = new ScrollFactor(blava1);
-		blava1ScrollFactor.x = 1.2;
-		blava1ScrollFactor.y = 1;
+		// horizontalMoveScript_1 (prefab fields)
+		horizontalMoveScript_1.horizVelocity = -50;
+		horizontalMoveScript_1.minX = 1900;
+		horizontalMoveScript_1.maxX = 2224;
 
-		// movingPlatform2 (components)
-		const movingPlatform2HorizontalMove = HorizontalMove.getComponent(movingPlatform2);
-		movingPlatform2HorizontalMove.horizVelocity = -50;
-		movingPlatform2HorizontalMove.minX = 540;
-		movingPlatform2HorizontalMove.maxX = 1170;
+		// horizontalMoveScript (prefab fields)
+		horizontalMoveScript.horizVelocity = 100;
+		horizontalMoveScript.minX = 1720;
+		horizontalMoveScript.maxX = 2360;
 
-		// movingPlatform1 (components)
-		const movingPlatform1HorizontalMove = HorizontalMove.getComponent(movingPlatform1);
-		movingPlatform1HorizontalMove.minX = 310;
-		movingPlatform1HorizontalMove.maxX = 924;
+		// followObjectScript_3 (prefab fields)
+		followObjectScript_3.target = movingPlatform3;
 
-		// movingPlatform3 (components)
-		const movingPlatform3HorizontalMove = HorizontalMove.getComponent(movingPlatform3);
-		movingPlatform3HorizontalMove.horizVelocity = -50;
-		movingPlatform3HorizontalMove.minX = 1900;
-		movingPlatform3HorizontalMove.maxX = 2224;
+		// followObjectScript_2 (prefab fields)
+		followObjectScript_2.target = movingPlatform2;
 
-		// movingPlatform4 (components)
-		const movingPlatform4HorizontalMove = HorizontalMove.getComponent(movingPlatform4);
-		movingPlatform4HorizontalMove.minX = 1720;
-		movingPlatform4HorizontalMove.maxX = 2360;
+		// followObjectScript_1 (prefab fields)
+		followObjectScript_1.target = movingPlatform1;
 
-		// skull1 (components)
-		const skull1FollowObject = new FollowObject(skull1);
-		skull1FollowObject.target = movingPlatform3;
-
-		// lava2 (components)
-		const lava2FollowObject = new FollowObject(lava2);
-		lava2FollowObject.target = movingPlatform2;
-
-		// lava1 (components)
-		const lava1FollowObject = new FollowObject(lava1);
-		lava1FollowObject.target = movingPlatform1;
-
-		// ladder6 (components)
-		const ladder6FollowObject = new FollowObject(ladder6);
-		ladder6FollowObject.target = movingPlatform2;
+		// followObjectScript (prefab fields)
+		followObjectScript.target = movingPlatform2;
 
 		// player (prefab fields)
 		player.platforms = platforms;
 		player.foodItems = foodItems;
 
-		// btn_left (components)
-		const btn_leftPlayerController = PlayerController.getComponent(btn_left);
-		btn_leftPlayerController.player = player;
-		btn_leftPlayerController.direction = "left";
+		// btn_left.playerControllerScript (prefab fields)
+		btn_left.playerControllerScript.player = player;
+		btn_left.playerControllerScript.direction = "left";
 
-		// btn_right (components)
-		const btn_rightPlayerController = PlayerController.getComponent(btn_right);
-		btn_rightPlayerController.player = player;
-		btn_rightPlayerController.direction = "right";
+		// btn_right.playerControllerScript (prefab fields)
+		btn_right.playerControllerScript.player = player;
+		btn_right.playerControllerScript.direction = "right";
 
-		// btn_up (components)
-		const btn_upPlayerController = PlayerController.getComponent(btn_up);
-		btn_upPlayerController.player = player;
-		btn_upPlayerController.direction = "up";
-
-		// debugText (components)
-		new ScrollFactor(debugText);
+		// btn_up.playerControllerScript (prefab fields)
+		btn_up.playerControllerScript.player = player;
+		btn_up.playerControllerScript.direction = "up";
 
 		this.player = player;
 

@@ -3,12 +3,16 @@
 
 /* START OF COMPILED CODE */
 
-interface FoodItem {
+import Phaser from "phaser";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
+export default interface FoodItem {
 
 	 body: Phaser.Physics.Arcade.Body;
 }
 
-class FoodItem extends Phaser.GameObjects.Image {
+export default class FoodItem extends Phaser.GameObjects.Image {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 72, y ?? 70, texture || "volcano", frame ?? "Volcano Level Set_Collectable Object - Meat.png");
