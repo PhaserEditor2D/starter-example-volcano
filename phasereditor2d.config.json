@@ -1,5 +1,10 @@
 {
     "plugins": [],
+    "scripts": [
+        "@phasereditor2d/scripts-core",
+        "@phasereditor2d/scripts-simple-animations",
+        "@phasereditor2d/scripts-camera"
+    ],
     "skip": [
         "dist", "design"
     ],

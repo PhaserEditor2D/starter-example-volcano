@@ -12,8 +12,14 @@ import Stone from "../prefabs/Stone";
 import FollowObjectScript from "../script-nodes/FollowObjectScript";
 import Ladder from "../prefabs/Ladder";
 import Player from "../prefabs/Player";
+import { OnAwakeScript } from "@phasereditor2d/scripts-core";
+import { CameraStartFollowActionScript } from "@phasereditor2d/scripts-camera";
 import FoodItem from "../prefabs/FoodItem";
 import PlayerButton from "../prefabs/PlayerButton";
+import { MoveInSceneActionScript } from "@phasereditor2d/scripts-simple-animations";
+import { DurationConfigComp } from "@phasereditor2d/scripts-simple-animations";
+import { DelayConfigComp } from "@phasereditor2d/scripts-simple-animations";
+import { FadeCameraActionScript } from "@phasereditor2d/scripts-camera";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -226,6 +232,12 @@ export default class Level extends Phaser.Scene {
 		const player = new Player(this, 104, 482, "player", "Idle_001");
 		playerLayer.add(player);
 
+		// onAwakeScript_4
+		const onAwakeScript_4 = new OnAwakeScript(player);
+
+		// cameraStartFollowActionScript
+		new CameraStartFollowActionScript(onAwakeScript_4);
+
 		// pickItemsLayer
 		const pickItemsLayer = this.add.layer();
 
@@ -248,16 +260,40 @@ export default class Level extends Phaser.Scene {
 		const btn_left = new PlayerButton(this, 880, 640, "ui", "btn-left");
 		controlsLayer.add(btn_left);
 
+		// onAwakeScript_1
+		const onAwakeScript_1 = new OnAwakeScript(btn_left);
+
+		// moveInSceneActionScript_1
+		const moveInSceneActionScript_1 = new MoveInSceneActionScript(onAwakeScript_1);
+
 		// btn_right
 		const btn_right = new PlayerButton(this, 1080, 640, "ui", "btn-right");
 		controlsLayer.add(btn_right);
+
+		// onAwakeScript_2
+		const onAwakeScript_2 = new OnAwakeScript(btn_right);
+
+		// moveInSceneActionScript_2
+		const moveInSceneActionScript_2 = new MoveInSceneActionScript(onAwakeScript_2);
 
 		// btn_up
 		const btn_up = new PlayerButton(this, 126, 640);
 		controlsLayer.add(btn_up);
 
+		// onAwakeScript
+		const onAwakeScript = new OnAwakeScript(btn_up);
+
+		// moveInSceneActionScript
+		const moveInSceneActionScript = new MoveInSceneActionScript(onAwakeScript);
+
 		// debugLayer
 		this.add.layer();
+
+		// onAwakeScript_3
+		const onAwakeScript_3 = new OnAwakeScript(this);
+
+		// fadeCameraActionScript
+		new FadeCameraActionScript(onAwakeScript_3);
 
 		// lists
 		const platforms = [p1, movingPlatform1, movingPlatform2, movingPlatform3, movingPlatform4, p8, p12, p13, p10, p11, ladder1, ladder2, ladder3, ladder5, ladder4, ladder6];
@@ -306,13 +342,40 @@ export default class Level extends Phaser.Scene {
 		btn_left.playerControllerScript.player = player;
 		btn_left.playerControllerScript.direction = "left";
 
+		// moveInSceneActionScript_1 (prefab fields)
+		moveInSceneActionScript_1.from = "BOTTOM";
+
+		// moveInSceneActionScript_1 (components)
+		const moveInSceneActionScript_1DurationConfigComp = new DurationConfigComp(moveInSceneActionScript_1);
+		moveInSceneActionScript_1DurationConfigComp.duration = 750;
+		const moveInSceneActionScript_1DelayConfigComp = new DelayConfigComp(moveInSceneActionScript_1);
+		moveInSceneActionScript_1DelayConfigComp.delay = 750;
+
 		// btn_right.playerControllerScript (prefab fields)
 		btn_right.playerControllerScript.player = player;
 		btn_right.playerControllerScript.direction = "right";
 
+		// moveInSceneActionScript_2 (prefab fields)
+		moveInSceneActionScript_2.from = "BOTTOM";
+
+		// moveInSceneActionScript_2 (components)
+		const moveInSceneActionScript_2DurationConfigComp = new DurationConfigComp(moveInSceneActionScript_2);
+		moveInSceneActionScript_2DurationConfigComp.duration = 750;
+		const moveInSceneActionScript_2DelayConfigComp = new DelayConfigComp(moveInSceneActionScript_2);
+		moveInSceneActionScript_2DelayConfigComp.delay = 750;
+
 		// btn_up.playerControllerScript (prefab fields)
 		btn_up.playerControllerScript.player = player;
 		btn_up.playerControllerScript.direction = "up";
+
+		// moveInSceneActionScript (prefab fields)
+		moveInSceneActionScript.from = "BOTTOM";
+
+		// moveInSceneActionScript (components)
+		const moveInSceneActionScriptDurationConfigComp = new DurationConfigComp(moveInSceneActionScript);
+		moveInSceneActionScriptDurationConfigComp.duration = 750;
+		const moveInSceneActionScriptDelayConfigComp = new DelayConfigComp(moveInSceneActionScript);
+		moveInSceneActionScriptDelayConfigComp.delay = 750;
 
 		this.player = player;
 
@@ -328,7 +391,6 @@ export default class Level extends Phaser.Scene {
 		this.editorCreate();
 
 		this.cameras.main.setBounds(0, -800, 3000, 750 + 800);
-		this.cameras.main.startFollow(this.player);
 	}
 
 	/* END-USER-CODE */

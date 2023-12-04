@@ -3,14 +3,14 @@
 
 /* START OF COMPILED CODE */
 
-import SpriteScriptNode from "../script-nodes-basic/SpriteScriptNode";
-import ScriptNode from "../script-nodes-basic/ScriptNode";
+import { SpriteScript } from "@phasereditor2d/scripts-core";
+import { ScriptNode } from "@phasereditor2d/scripts-core";
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
 import Player from "../prefabs/Player";
 /* END-USER-IMPORTS */
 
-export default class PlayerControllerScript extends SpriteScriptNode {
+export default class PlayerControllerScript extends SpriteScript {
 
 	constructor(parent: ScriptNode | Phaser.GameObjects.GameObject | Phaser.Scene) {
 		super(parent);

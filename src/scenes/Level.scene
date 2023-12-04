@@ -18,7 +18,6 @@
             "type": "Layer",
             "id": "51c9c4d7-fe09-45dd-9a00-d3b2644bf9b8",
             "label": "backgroundLayer",
-            "components": [],
             "list": [
                 {
                     "type": "Image",
@@ -47,10 +46,7 @@
                                 "x"
                             ],
                             "label": "scrollFactorScript_1",
-                            "x": 0.1,
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
+                            "x": 0.1
                         }
                     ]
                 }
@@ -60,20 +56,17 @@
             "type": "Layer",
             "id": "6652b381-2d9f-4139-9d3b-e66152f2cb88",
             "label": "platformBottomItemsLayer",
-            "components": [],
             "list": [
                 {
                     "type": "Image",
                     "id": "9dd8fb03-dcec-413c-892b-649a83a3e251",
                     "label": "signpost1",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Environment - Signpost 01.png"
                     },
                     "x": 1536,
-                    "y": -344,
-                    "list": []
+                    "y": -344
                 }
             ]
         },
@@ -81,7 +74,6 @@
             "type": "Layer",
             "id": "04834bab-9f37-4624-9ace-4c1834404fe3",
             "label": "platformsLayer",
-            "components": [],
             "list": [
                 {
                     "prefabId": "4067c8d7-b512-4e73-897d-f33aa7713a53",
@@ -94,10 +86,8 @@
                         "y"
                     ],
                     "label": "movingPlatform2",
-                    "components": [],
                     "x": 890,
                     "y": 256,
-                    "nestedPrefabs": [],
                     "list": [
                         {
                             "prefabId": "c7a6a49e-e3f2-4786-88c3-4a93b572a86e",
@@ -110,10 +100,7 @@
                             "label": "horizontalMoveScript_3",
                             "horizVelocity": -50,
                             "minX": 540,
-                            "maxX": 1170,
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
+                            "maxX": 1170
                         }
                     ]
                 },
@@ -127,10 +114,8 @@
                         "y"
                     ],
                     "label": "movingPlatform1",
-                    "components": [],
                     "x": 311,
                     "y": 577,
-                    "nestedPrefabs": [],
                     "list": [
                         {
                             "prefabId": "c7a6a49e-e3f2-4786-88c3-4a93b572a86e",
@@ -143,10 +128,7 @@
                             "label": "horizontalMoveScript_2",
                             "horizVelocity": 100,
                             "minX": 310,
-                            "maxX": 924,
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
+                            "maxX": 924
                         }
                     ]
                 },
@@ -154,46 +136,39 @@
                     "type": "Image",
                     "id": "0e1252e1-fe70-45f4-bb5a-e79a00f6f711",
                     "label": "p4",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground Additional 03.png"
                     },
                     "x": 128,
-                    "y": 768,
-                    "list": []
+                    "y": 768
                 },
                 {
                     "type": "Image",
                     "id": "53ca02c0-160d-4c94-b9fa-cf50ea2df825",
                     "label": "p3",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 12.png"
                     },
                     "x": 256,
-                    "y": 640,
-                    "list": []
+                    "y": 640
                 },
                 {
                     "type": "Image",
                     "id": "ff41a00a-ec3b-4c48-bc1d-23c95798a3ca",
                     "label": "p2",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 11.png"
                     },
                     "x": 128,
-                    "y": 640,
-                    "list": []
+                    "y": 640
                 },
                 {
                     "type": "Image",
                     "id": "6e8a0811-1e8f-490d-a79e-6cbab798ec4a",
                     "label": "p1",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 11.png"
@@ -207,8 +182,7 @@
                     "immovable": true,
                     "body.width": 374,
                     "body.height": 32,
-                    "body.offset.y": 8,
-                    "list": []
+                    "body.offset.y": 8
                 },
                 {
                     "prefabId": "4067c8d7-b512-4e73-897d-f33aa7713a53",
@@ -221,10 +195,8 @@
                         "y"
                     ],
                     "label": "movingPlatform3",
-                    "components": [],
                     "x": 1920,
                     "y": 0,
-                    "nestedPrefabs": [],
                     "list": [
                         {
                             "prefabId": "c7a6a49e-e3f2-4786-88c3-4a93b572a86e",
@@ -237,10 +209,7 @@
                             "label": "horizontalMoveScript_1",
                             "horizVelocity": -50,
                             "minX": 1900,
-                            "maxX": 2224,
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
+                            "maxX": 2224
                         }
                     ]
                 },
@@ -254,10 +223,8 @@
                         "y"
                     ],
                     "label": "movingPlatform4",
-                    "components": [],
                     "x": 1882,
                     "y": 590,
-                    "nestedPrefabs": [],
                     "list": [
                         {
                             "prefabId": "c7a6a49e-e3f2-4786-88c3-4a93b572a86e",
@@ -270,10 +237,7 @@
                             "label": "horizontalMoveScript",
                             "horizVelocity": 100,
                             "minX": 1720,
-                            "maxX": 2360,
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
+                            "maxX": 2360
                         }
                     ]
                 },
@@ -281,7 +245,6 @@
                     "type": "Image",
                     "id": "14939281-2102-4773-899d-26550fde5486",
                     "label": "p9",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground Additional 03.png"
@@ -289,14 +252,12 @@
                     "x": 2880,
                     "y": 640,
                     "originX": 0,
-                    "originY": 0,
-                    "list": []
+                    "originY": 0
                 },
                 {
                     "type": "Image",
                     "id": "00980329-aa9a-43d1-9dac-de7b8bb573a9",
                     "label": "p8",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 10.png"
@@ -312,47 +273,40 @@
                     "body.width": 541,
                     "body.height": 27,
                     "body.offset.x": 10,
-                    "body.offset.y": 8,
-                    "list": []
+                    "body.offset.y": 8
                 },
                 {
                     "type": "Image",
                     "id": "f8dd3437-118e-4c70-98ee-366f51226378",
                     "label": "p7",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 11.png"
                     },
                     "x": 2944,
-                    "y": 640,
-                    "list": []
+                    "y": 640
                 },
                 {
                     "type": "Image",
                     "id": "897aaca6-9219-4997-8172-ea876b24ccf5",
                     "label": "p6",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 11.png"
                     },
                     "x": 3073,
-                    "y": 640,
-                    "list": []
+                    "y": 640
                 },
                 {
                     "type": "Image",
                     "id": "dd4e39a5-4fd4-4c9e-be90-fc5a135edc48",
                     "label": "p5",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ground 11.png"
                     },
                     "x": 3200,
-                    "y": 640,
-                    "list": []
+                    "y": 640
                 },
                 {
                     "prefabId": "8f45727a-d419-4d94-8405-95063eb19bdf",
@@ -362,11 +316,8 @@
                         "y"
                     ],
                     "label": "p12",
-                    "components": [],
                     "x": 1536,
-                    "y": 384,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": 384
                 },
                 {
                     "prefabId": "8f45727a-d419-4d94-8405-95063eb19bdf",
@@ -376,11 +327,8 @@
                         "y"
                     ],
                     "label": "p11",
-                    "components": [],
                     "x": 1536,
-                    "y": -256,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": -256
                 },
                 {
                     "prefabId": "8f45727a-d419-4d94-8405-95063eb19bdf",
@@ -390,11 +338,8 @@
                         "y"
                     ],
                     "label": "p10",
-                    "components": [],
                     "x": 1664,
-                    "y": -256,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": -256
                 },
                 {
                     "prefabId": "8f45727a-d419-4d94-8405-95063eb19bdf",
@@ -404,11 +349,8 @@
                         "y"
                     ],
                     "label": "p13",
-                    "components": [],
                     "x": 1792,
-                    "y": -256,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": -256
                 }
             ]
         },
@@ -416,39 +358,33 @@
             "type": "Layer",
             "id": "8f6fecee-fb04-42f9-ad25-f44d84558243",
             "label": "platformTopItemsLayer",
-            "components": [],
             "list": [
                 {
                     "type": "Image",
                     "id": "781ea1f4-2c85-4b90-bce3-f4b9af483eba",
                     "label": "endFlag",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Environment - White Flag.png"
                     },
                     "x": 2944,
-                    "y": 526,
-                    "list": []
+                    "y": 526
                 },
                 {
                     "type": "Image",
                     "id": "c039c650-a9ff-48a2-8c9c-7b41d8fb6723",
                     "label": "signpost",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Environment - Signpost 01.png"
                     },
                     "x": 131,
-                    "y": 519,
-                    "list": []
+                    "y": 519
                 },
                 {
                     "type": "Image",
                     "id": "585e7f68-1856-49be-bea1-459765045702",
                     "label": "skull1",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Environment - Skull.png"
@@ -463,10 +399,7 @@
                                 "target"
                             ],
                             "label": "followObjectScript_3",
-                            "target": "movingPlatform3",
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
+                            "target": "movingPlatform3"
                         }
                     ]
                 },
@@ -474,7 +407,6 @@
                     "type": "Image",
                     "id": "9c8a2f73-78cd-4873-b393-0785341fc340",
                     "label": "lava2",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Environment - Lava 02.png"
@@ -489,10 +421,7 @@
                                 "target"
                             ],
                             "label": "followObjectScript_2",
-                            "target": "movingPlatform2",
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
+                            "target": "movingPlatform2"
                         }
                     ]
                 },
@@ -500,7 +429,6 @@
                     "type": "Image",
                     "id": "e7d3a67c-8bd2-433a-8825-fb8438091297",
                     "label": "lava1",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Environment - Lava 02.png"
@@ -515,10 +443,7 @@
                                 "target"
                             ],
                             "label": "followObjectScript_1",
-                            "target": "movingPlatform1",
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
+                            "target": "movingPlatform1"
                         }
                     ]
                 },
@@ -526,14 +451,12 @@
                     "type": "Image",
                     "id": "414e109e-b482-4247-86a8-a440481c6921",
                     "label": "lava3",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Environment - Lava 02.png"
                     },
                     "x": 233,
-                    "y": 571,
-                    "list": []
+                    "y": 571
                 }
             ]
         },
@@ -541,7 +464,6 @@
             "type": "Layer",
             "id": "aa56a103-221e-4202-821f-3ebb65545aab",
             "label": "laddersLayer",
-            "components": [],
             "list": [
                 {
                     "prefabId": "37217272-2539-426e-97ba-49812099c17b",
@@ -552,15 +474,12 @@
                         "y"
                     ],
                     "label": "ladder5",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ladder.png"
                     },
                     "x": 1468,
-                    "y": -150,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": -150
                 },
                 {
                     "prefabId": "37217272-2539-426e-97ba-49812099c17b",
@@ -571,15 +490,12 @@
                         "y"
                     ],
                     "label": "ladder4",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ladder.png"
                     },
                     "x": 1472,
-                    "y": -272,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": -272
                 },
                 {
                     "prefabId": "37217272-2539-426e-97ba-49812099c17b",
@@ -590,15 +506,12 @@
                         "y"
                     ],
                     "label": "ladder3",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ladder.png"
                     },
                     "x": 1475,
-                    "y": -22,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": -22
                 },
                 {
                     "prefabId": "37217272-2539-426e-97ba-49812099c17b",
@@ -609,15 +522,12 @@
                         "y"
                     ],
                     "label": "ladder2",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Platformer - Ladder.png"
                     },
                     "x": 1467,
-                    "y": 106,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": 106
                 },
                 {
                     "prefabId": "37217272-2539-426e-97ba-49812099c17b",
@@ -627,11 +537,8 @@
                         "y"
                     ],
                     "label": "ladder1",
-                    "components": [],
                     "x": 1475,
-                    "y": 208,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": 208
                 },
                 {
                     "prefabId": "37217272-2539-426e-97ba-49812099c17b",
@@ -641,10 +548,8 @@
                         "y"
                     ],
                     "label": "ladder6",
-                    "components": [],
                     "x": 952,
                     "y": 321,
-                    "nestedPrefabs": [],
                     "list": [
                         {
                             "prefabId": "87c25255-3a43-404e-b82f-95f8f140ebb9",
@@ -653,10 +558,7 @@
                                 "target"
                             ],
                             "label": "followObjectScript",
-                            "target": "movingPlatform2",
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
+                            "target": "movingPlatform2"
                         }
                     ]
                 }
@@ -666,7 +568,6 @@
             "type": "Layer",
             "id": "83cb0edc-5a91-49d5-a5c6-1d30959157b7",
             "label": "playerLayer",
-            "components": [],
             "list": [
                 {
                     "prefabId": "3168bc06-abd4-4154-bd16-8450e14d1012",
@@ -682,15 +583,26 @@
                     "scope": "CLASS",
                     "platforms": "platforms",
                     "foodItems": "foodItems",
-                    "components": [],
                     "texture": {
                         "key": "player",
                         "frame": "Idle_001"
                     },
                     "x": 104,
                     "y": 482,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "list": [
+                        {
+                            "prefabId": "7028a0e2-cd14-44b7-b2a4-68dac16ece00",
+                            "id": "aa429547-e55e-410e-94a9-09fdde27ceeb",
+                            "label": "onAwakeScript_4",
+                            "list": [
+                                {
+                                    "prefabId": "e755be61-4aed-4ce8-a8e0-f23fc667bfc6",
+                                    "id": "dc0c4a1f-1183-43a1-b93a-8692c92e7c44",
+                                    "label": "cameraStartFollowActionScript"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -698,7 +610,6 @@
             "type": "Layer",
             "id": "953cadd4-437f-49e9-b336-30fd1152733d",
             "label": "pickItemsLayer",
-            "components": [],
             "list": [
                 {
                     "prefabId": "ad30b4e1-19b5-4a8c-8b9b-bdecec788df1",
@@ -709,15 +620,12 @@
                         "y"
                     ],
                     "label": "meet3",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Collectable Object - Meat.png"
                     },
                     "x": 1232,
-                    "y": 33,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": 33
                 },
                 {
                     "prefabId": "ad30b4e1-19b5-4a8c-8b9b-bdecec788df1",
@@ -728,15 +636,12 @@
                         "y"
                     ],
                     "label": "meet2",
-                    "components": [],
                     "texture": {
                         "key": "volcano",
                         "frame": "Volcano Level Set_Collectable Object - Meat.png"
                     },
                     "x": 2250,
-                    "y": 278,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": 278
                 },
                 {
                     "prefabId": "ad30b4e1-19b5-4a8c-8b9b-bdecec788df1",
@@ -746,11 +651,8 @@
                         "y"
                     ],
                     "label": "meet1",
-                    "components": [],
                     "x": 747,
-                    "y": 386,
-                    "nestedPrefabs": [],
-                    "list": []
+                    "y": 386
                 }
             ]
         },
@@ -758,7 +660,6 @@
             "type": "Layer",
             "id": "1a876ef2-f9f0-41a1-8bbb-820105bbc04e",
             "label": "controlsLayer",
-            "components": [],
             "list": [
                 {
                     "prefabId": "f7d3ed5d-93cf-46d1-ab9e-d4c10ddc94e5",
@@ -773,7 +674,6 @@
                         "y"
                     ],
                     "label": "btn_left",
-                    "components": [],
                     "texture": {
                         "key": "ui",
                         "frame": "btn-left"
@@ -790,13 +690,33 @@
                             ],
                             "label": "playerControllerScript",
                             "player": "player",
-                            "direction": "left",
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
+                            "direction": "left"
                         }
                     ],
-                    "list": []
+                    "list": [
+                        {
+                            "prefabId": "7028a0e2-cd14-44b7-b2a4-68dac16ece00",
+                            "id": "9ef442e3-ac17-4e2c-be7d-4115738dbf6f",
+                            "label": "onAwakeScript_1",
+                            "list": [
+                                {
+                                    "prefabId": "3d337935-cdca-4937-9126-9f75bc2486de",
+                                    "id": "fef7b415-7774-4d61-9ed4-5ef2e4fd0935",
+                                    "unlock": [
+                                        "from"
+                                    ],
+                                    "label": "moveInSceneActionScript_1",
+                                    "from": "BOTTOM",
+                                    "components": [
+                                        "DurationConfigComp",
+                                        "DelayConfigComp"
+                                    ],
+                                    "DurationConfigComp.duration": 750,
+                                    "DelayConfigComp.delay": 750
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "prefabId": "f7d3ed5d-93cf-46d1-ab9e-d4c10ddc94e5",
@@ -810,7 +730,6 @@
                         "y"
                     ],
                     "label": "btn_right",
-                    "components": [],
                     "texture": {
                         "key": "ui",
                         "frame": "btn-right"
@@ -827,13 +746,33 @@
                             ],
                             "label": "playerControllerScript",
                             "player": "player",
-                            "direction": "right",
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
+                            "direction": "right"
                         }
                     ],
-                    "list": []
+                    "list": [
+                        {
+                            "prefabId": "7028a0e2-cd14-44b7-b2a4-68dac16ece00",
+                            "id": "3d38c65b-b23d-4374-a64c-a0f1329e7829",
+                            "label": "onAwakeScript_2",
+                            "list": [
+                                {
+                                    "prefabId": "3d337935-cdca-4937-9126-9f75bc2486de",
+                                    "id": "7715f565-0fec-47ea-826e-e579ac63ed61",
+                                    "unlock": [
+                                        "from"
+                                    ],
+                                    "label": "moveInSceneActionScript_2",
+                                    "from": "BOTTOM",
+                                    "components": [
+                                        "DurationConfigComp",
+                                        "DelayConfigComp"
+                                    ],
+                                    "DurationConfigComp.duration": 750,
+                                    "DelayConfigComp.delay": 750
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "prefabId": "f7d3ed5d-93cf-46d1-ab9e-d4c10ddc94e5",
@@ -846,7 +785,6 @@
                         "y"
                     ],
                     "label": "btn_up",
-                    "components": [],
                     "x": 126,
                     "y": 640,
                     "nestedPrefabs": [
@@ -859,22 +797,52 @@
                             ],
                             "label": "playerControllerScript",
                             "player": "player",
-                            "direction": "up",
-                            "components": [],
-                            "nestedPrefabs": [],
-                            "list": []
+                            "direction": "up"
                         }
                     ],
-                    "list": []
+                    "list": [
+                        {
+                            "prefabId": "7028a0e2-cd14-44b7-b2a4-68dac16ece00",
+                            "id": "aa956cb0-ca09-4684-9f05-05e69560e672",
+                            "label": "onAwakeScript",
+                            "list": [
+                                {
+                                    "prefabId": "3d337935-cdca-4937-9126-9f75bc2486de",
+                                    "id": "5184b254-42ce-4bc5-becc-e814f5cfb92d",
+                                    "unlock": [
+                                        "from"
+                                    ],
+                                    "label": "moveInSceneActionScript",
+                                    "from": "BOTTOM",
+                                    "components": [
+                                        "DurationConfigComp",
+                                        "DelayConfigComp"
+                                    ],
+                                    "DurationConfigComp.duration": 750,
+                                    "DelayConfigComp.delay": 750
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
         {
             "type": "Layer",
             "id": "a1228d0a-4239-4d26-814e-4de26353bdb2",
-            "label": "debugLayer",
-            "components": [],
-            "list": []
+            "label": "debugLayer"
+        },
+        {
+            "prefabId": "7028a0e2-cd14-44b7-b2a4-68dac16ece00",
+            "id": "c61e5979-7278-4e7f-b9b7-8a1fbb419df5",
+            "label": "onAwakeScript_3",
+            "list": [
+                {
+                    "prefabId": "8b05d14f-3d5d-42a7-adfb-a0b20d9196b5",
+                    "id": "1dfe2152-b669-407f-a834-af3817bfeaf1",
+                    "label": "fadeCameraActionScript"
+                }
+            ]
         }
     ],
     "plainObjects": [],
@@ -882,7 +850,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     },
     "lists": [
         {

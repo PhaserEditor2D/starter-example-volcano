@@ -4,6 +4,8 @@
     "settings": {
         "exportClass": true,
         "autoImport": true,
+        "prefabObjDisplayFmt": "Horizontal move \"v=${horizVelocity} min=${minX} max=${maxX}\", ",
+        "displayName": "Horizontal Move Script",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -15,10 +17,7 @@
         {
             "prefabId": "5e746613-c01a-42aa-8681-4950bb2f23ce",
             "id": "b0cac7f6-5558-453e-b9a3-f5808c327b5f",
-            "label": "spriteScriptNode",
-            "components": [],
-            "nestedPrefabs": [],
-            "list": []
+            "label": "spriteScriptNode"
         }
     ],
     "plainObjects": [],
@@ -26,38 +25,38 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     },
     "prefabProperties": [
         {
-                    "name": "horizVelocity",
-                    "label": "Horizontal Velocity",
-                    "tooltip": "The velocity of the object.",
-                    "defValue": 0,
-                    "customDefinition": false,
-                    "type": {
-                        "id": "number"
-                    }
-                },
-                {
-                    "name": "minX",
-                    "label": "Min Position X",
-                    "tooltip": "Min X",
-                    "defValue": 0,
-                    "customDefinition": false,
-                    "type": {
-                        "id": "number"
-                    }
-                },
-                {
-                    "name": "maxX",
-                    "label": "Max Position X",
-                    "tooltip": "Max X",
-                    "defValue": 3070,
-                    "customDefinition": false,
-                    "type": {
-                        "id": "number"
-                    }
-                }
+            "name": "horizVelocity",
+            "label": "Horizontal Velocity",
+            "tooltip": "The velocity of the object.",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "minX",
+            "label": "Min Position X",
+            "tooltip": "Min X",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "maxX",
+            "label": "Max Position X",
+            "tooltip": "Max X",
+            "defValue": 3070,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
     ]
 }

@@ -4,6 +4,8 @@
     "settings": {
         "exportClass": true,
         "autoImport": true,
+        "prefabObjDisplayFmt": "Follow \"${target}\"",
+        "displayName": "Follow Object Script",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -15,10 +17,7 @@
         {
             "prefabId": "5e746613-c01a-42aa-8681-4950bb2f23ce",
             "id": "751f3871-5470-4a2d-af5f-9c2d9c98e65f",
-            "label": "spriteScriptNode",
-            "components": [],
-            "nestedPrefabs": [],
-            "list": []
+            "label": "spriteScriptNode"
         }
     ],
     "plainObjects": [],
@@ -26,7 +25,7 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     },
     "prefabProperties": [
         {

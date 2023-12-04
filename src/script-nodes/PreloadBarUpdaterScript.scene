@@ -4,6 +4,8 @@
     "settings": {
         "exportClass": true,
         "autoImport": true,
+        "prefabObjDisplayFmt": "Resize preload bar",
+        "displayName": "Preload Bar Script",
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
@@ -13,9 +15,7 @@
         {
             "type": "ScriptNode",
             "id": "00cda4d5-1904-4e5c-b813-c14cc09591aa",
-            "label": "scriptnode_1",
-            "components": [],
-            "list": []
+            "label": "scriptnode_1"
         }
     ],
     "plainObjects": [],
@@ -23,6 +23,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 3
+        "version": 5
     }
 }
