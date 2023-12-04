@@ -138,9 +138,13 @@ The Scenes, User Components, and ScriptNodes are configured to compile to TypeSc
 
 ### ScriptNodes
 
-The `src/script-nodes-basic` folder contains the script nodes from the [script-nodes-basic](http://github.com/PhaserEditor2D/script-nodes-basic/) project.
+The project requires the following script libraries:
 
-You can add your own script nodes to the `src/script-nodes` folder.
+* [@phasereditor2d/scripts-core](https://www.npmjs.com/package/@phasereditor2d/scripts-core)
+* [@phasereditor2d/scripts-simple-animations](https://www.npmjs.com/package/@phasereditor2d/scripts-simple-animations)
+* [@phasereditor2d/scripts-camera](https://www.npmjs.com/package/@phasereditor2d/scripts-camera)
+
+You can add your script nodes to the `src/script-nodes` folder.
 
 ## About
 
